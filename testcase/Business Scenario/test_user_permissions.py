@@ -11,7 +11,7 @@ class TestUserManager:
 
     @allure.story(next(c_id) + "查询用户权限")
     @pytest.mark.run(order=1)
-    @pytest.mark.parametrize('case_info', get_testcase_yaml("user_permissions_data.yaml"))
+    @pytest.mark.parametrize('case_info', get_testcase_yaml("./testcase/Business Scenario/user_permissions_data.yaml"))
     def test_user_permissions(self, case_info):
         allure.dynamic.title(case_info['baseInfo']['api_name'])
         RequestBase().specification_yaml(case_info)

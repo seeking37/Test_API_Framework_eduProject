@@ -20,7 +20,9 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, '..'))
 sys.path.append(project_root)
 
-from mock_server.api_server.confs.setting import DIR_BASE  # noqa: E402
+# from mock_server.api_server.confs.setting import DIR_BASE  # noqa: E402
+from confs.setting import DIR_BASE
+
 
 import flask  # noqa: E402
 import json  # noqa: E402
