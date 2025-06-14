@@ -1,0 +1,54 @@
+{
+    "RECORDS": [
+        {
+            "id": "1",
+            "code": "ADMIN",
+            "name": "超级管理员",
+            "description": "后台管理员，初始拥有权限管理功能",
+            "created_time": "2020-7-20 15:41:29",
+            "updated_time": "2020-7-20 15:41:29",
+            "created_by": "system",
+            "updated_by": "system"
+        },
+        {
+            "id": "2",
+            "code": "AUTHORITY_MANAGER",
+            "name": "权限管理员",
+            "description": "管理权限相关数据，如角色、菜单、资源。可以给用户分配角色。",
+            "created_time": "2020-7-20 07:47:55",
+            "updated_time": "2020-7-20 07:47:55",
+            "created_by": "15510792994",
+            "updated_by": "15510792994"
+        },
+        {
+            "id": "3",
+            "code": "COURSE_MANAGER",
+            "name": "课程管理员",
+            "description": "管理课程信息，对课程、课时、章节进行管理。",
+            "created_time": "2020-7-20 07:52:04",
+            "updated_time": "2020-7-20 07:52:04",
+            "created_by": "15510792994",
+            "updated_by": "15510792994"
+        },
+        {
+            "id": "4",
+            "code": "AD_MANAGER",
+            "name": "广告管理员",
+            "description": "管理广告、广告位信息",
+            "created_time": "2020-7-20 07:55:56",
+            "updated_time": "2020-7-20 07:55:56",
+            "created_by": "15510792994",
+            "updated_by": "15510792994"
+        },
+        {
+            "id": "7",
+            "code": "UESR",
+            "name": "普通用户",
+            "description": "普通用户只能查询",
+            "created_time": "2020-8-17 16:29:23",
+            "updated_time": "2020-8-17 16:29:23",
+            "created_by": "system",
+            "updated_by": "system"
+        }
+    ]
+}

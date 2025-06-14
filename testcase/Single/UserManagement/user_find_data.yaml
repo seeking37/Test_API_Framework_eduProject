@@ -1,0 +1,140 @@
+- baseInfo:
+    api_name: 查询用户列表
+    url: /ssm_web/user/findAllUserByPage
+    method: post
+    header:
+      Content-Type: application/json
+      Authorization: ${get_extract_data(authorization)}
+  testCase:
+    - case_name: 1.正常查询第一页用户列表
+      json:
+        currentPage: 1
+        pageSize: 10
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - eq:
+            success: true
+        - contains:
+            state: 200
+        - contains:
+            content.pageNum: 1
+        - contains:
+            content.pageSize: 10
+
+    - case_name: 2.查询第二页用户列表
+      json:
+        currentPage: 2
+        pageSize: 10
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+        - contains:
+            content.pageNum: 2
+
+    - case_name: 3.每页显示5条数据
+      json:
+        currentPage: 1
+        pageSize: 5
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            content.pageSize: 5
+        - contains:
+            content.size: 5
+
+    - case_name: 4.缺少必填参数currentPage
+      use_mock: true
+      json:
+        pageSize: 10
+      validation:
+        - contains:
+            message: "缺少必填参数currentPage"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 5.缺少必填参数pageSize
+      use_mock: true
+      json:
+        currentPage: 1
+      validation:
+        - contains:
+            message: "缺少必填参数pageSize"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 6.请求参数为空
+      use_mock: true
+      json: null
+      validation:
+        - contains:
+            message: "请求参数不能为空"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 7.参数类型错误
+      use_mock: true
+      json:
+        currentPage: "abc"
+        pageSize: "def"
+      validation:
+        - contains:
+            message: "参数类型错误，currentPage和pageSize必须为整数"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 8.页码小于1
+      use_mock: true
+      json:
+        currentPage: 0
+        pageSize: 10
+      validation:
+        - contains:
+            message: "页码必须大于0"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 9.每页条数小于1
+      use_mock: true
+      json:
+        currentPage: 1
+        pageSize: -1
+      validation:
+        - contains:
+            message: "每页条数不能小于1"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 10.页码超出范围
+      use_mock: true
+      json:
+        currentPage: 999
+        pageSize: 10
+      validation:
+        - contains:
+            message: "页码超出范围，最大页码为2"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false

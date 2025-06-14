@@ -1,0 +1,262 @@
+- baseInfo:
+    api_name: 搜索用户
+    url: /ssm_web/user/findAllUserByPage
+    method: post
+    header:
+      Content-Type: application/json
+      Authorization: ${get_extract_data(authorization)}
+  testCase:
+    - case_name: 1.正常搜索-按用户名
+      json:
+        currentPage: 1
+        pageSize: 10
+        username: "15321919666"
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+        - contains:
+            content.list[0].name: "15321919666"
+
+    - case_name: 2.正常搜索-按时间范围
+      json:
+        currentPage: 1
+        pageSize: 10
+        startCreateTime: "2025-01-01"
+        endCreateTime: "2025-06-02"
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+
+    - case_name: 3.正常搜索-组合条件
+      json:
+        currentPage: 1
+        pageSize: 10
+        username: "15321919666"
+        startCreateTime: "2025-01-01"
+        endCreateTime: "2025-06-02"
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+
+    - case_name: 4.正常搜索-手机号和时间均为空
+      json:
+        currentPage: 1
+        pageSize: 10
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+        - contains:
+            content.total: 12
+
+    - case_name: 5.分页查询-第二页
+      json:
+        currentPage: 2
+        pageSize: 10
+        username: "15588886234"
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+        - contains:
+            content.pageNum: 2
+        - contains:
+            content.pageSize: 10
+        - contains:
+            content.isFirstPage: false
+        - contains:
+            content.hasPreviousPage: true
+        - contains:
+            content.list[0].name: "15588886234"
+
+    - case_name: 6.分页查询-每页5条
+      json:
+        currentPage: 1
+        pageSize: 5
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+        - contains:
+            content.pageSize: 5
+        - contains:
+            content.size: 5
+        - contains:
+            content.isFirstPage: true
+        - contains:
+            content.isLastPage: false
+
+    - case_name: 7.缺少必填参数currentPage
+      use_mock: true
+      json:
+        pageSize: 10
+        username: "15321919666"
+      validation:
+        - contains:
+            message: "缺少必填参数currentPage"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 8.缺少必填参数pageSize
+      use_mock: true
+      json:
+        currentPage: 1
+        username: "15321919666"
+      validation:
+        - contains:
+            message: "缺少必填参数pageSize"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 9.请求参数为空
+      use_mock: true
+      json: null
+      validation:
+        - contains:
+            message: "请求参数不能为空"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 10.参数类型错误
+      use_mock: true
+      json:
+        currentPage: "abc"
+        pageSize: "def"
+        username: 123
+      validation:
+        - contains:
+            message: "参数类型错误，currentPage和pageSize必须为整数"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 11.页码小于1
+      use_mock: true
+      json:
+        currentPage: 0
+        pageSize: 10
+        username: "15321919666"
+      validation:
+        - contains:
+            message: "页码必须大于0"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 12.每页条数小于0
+      use_mock: true
+      json:
+        currentPage: 1
+        pageSize: 0
+        username: "15321919666"
+      validation:
+        - contains:
+            message: "每页条数不能小于1"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 13.页码超出范围
+      use_mock: true
+      json:
+        currentPage: 999
+        pageSize: 10
+      validation:
+        - contains:
+            message: "页码超出范围，最大页码为2"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 14.搜索不存在的用户
+      use_mock: true
+      json:
+        currentPage: 1
+        pageSize: 10
+        username: "not_exist_user"
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+        - contains:
+            content.list: []
+        - contains:
+            content.total: 0
+
+    - case_name: 15.时间范围格式错误
+      use_mock: true
+      json:
+        currentPage: 1
+        pageSize: 10
+        startCreateTime: "2025-13-01"
+        endCreateTime: "2025-12-31"
+      validation:
+        - contains:
+            message: "时间格式错误，正确格式为：YYYY-MM-DD"
+        - contains:
+            status_code: 400
+        - contains:
+            success: false
+
+    - case_name: 16.验证分页信息完整性
+      use_mock: true
+      json:
+        currentPage: 1
+        pageSize: 10
+      validation:
+        - contains:
+            message: "响应成功"
+        - contains:
+            status_code: 200
+        - contains:
+            success: true
+        - contains:
+            content.firstPage: 1
+        - contains:
+            content.prePage: 0
+        - contains:
+            content.nextPage: 2
+        - contains:
+            content.lastPage: 2
+        - contains:
+            content.isFirstPage: true
+        - contains:
+            content.isLastPage: false
+        - contains:
+            content.hasPreviousPage: false
+        - contains:
+            content.hasNextPage: true

@@ -1,0 +1,94 @@
+{
+    "RECORDS": [
+        {
+            "id": "1",
+            "user_id": "100030012",
+            "role_id": "1",
+            "created_time": "2020-7-20 15:42:57",
+            "updated_time": "2020-7-20 15:42:57",
+            "created_by": "system",
+            "updated_by": "system"
+        },
+        {
+            "id": "3",
+            "user_id": "100030014",
+            "role_id": "1",
+            "created_time": "2020-7-20 07:57:58",
+            "updated_time": "2020-7-20 07:57:58",
+            "created_by": "15510792995",
+            "updated_by": "15510792995"
+        },
+        {
+            "id": "4",
+            "user_id": "100030019",
+            "role_id": "1",
+            "created_time": "2020-7-20 07:58:05",
+            "updated_time": "2020-7-20 07:58:05",
+            "created_by": "15510792995",
+            "updated_by": "15510792995"
+        },
+        {
+            "id": "9",
+            "user_id": "100030016",
+            "role_id": "1",
+            "created_time": "2020-7-28 03:55:44",
+            "updated_time": "2020-7-28 03:55:44",
+            "created_by": "15510792995",
+            "updated_by": "15510792995"
+        },
+        {
+            "id": "15",
+            "user_id": "100030022",
+            "role_id": "7",
+            "created_time": "2020-9-9 14:38:35",
+            "updated_time": "2020-9-9 14:38:35",
+            "created_by": "system",
+            "updated_by": "system"
+        },
+        {
+            "id": "17",
+            "user_id": "100030021",
+            "role_id": "7",
+            "created_time": "2020-9-9 15:27:47",
+            "updated_time": "2020-9-9 15:27:47",
+            "created_by": "system",
+            "updated_by": "system"
+        },
+        {
+            "id": "18",
+            "user_id": "100030026",
+            "role_id": "1",
+            "created_time": "2020-9-9 15:45:18",
+            "updated_time": "2020-9-9 15:45:18",
+            "created_by": "system",
+            "updated_by": "system"
+        },
+        {
+            "id": "19",
+            "user_id": "100030011",
+            "role_id": "2",
+            "created_time": "2020-9-9 16:39:54",
+            "updated_time": "2020-9-9 16:39:54",
+            "created_by": "system",
+            "updated_by": "system"
+        },
+        {
+            "id": "20",
+            "user_id": "100030011",
+            "role_id": "7",
+            "created_time": "2020-9-9 16:39:54",
+            "updated_time": "2020-9-9 16:39:54",
+            "created_by": "system",
+            "updated_by": "system"
+        },
+        {
+            "id": "22",
+            "user_id": "100030020",
+            "role_id": "3",
+            "created_time": "2020-9-10 11:04:15",
+            "updated_time": "2020-9-10 11:04:15",
+            "created_by": "system",
+            "updated_by": "system"
+        }
+    ]
+}
