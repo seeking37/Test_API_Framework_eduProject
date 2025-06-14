@@ -12,6 +12,7 @@ if __name__ == '__main__':
              '--junitxml=./report/allure/results.xml'])
         shutil.copy('./environment.xml', './report/allure/temp')
         os.system('allure generate ./report/allure/temp -o report/allure/html --clean')
+        os.system('allure generate ./report/allure/temp -o report/allure --single-html')
         if not os.getenv('CI'):
             os.system('allure serve ./report/allure/temp')
     # （Test Management）
