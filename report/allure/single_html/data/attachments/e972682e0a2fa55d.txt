@@ -1,0 +1,26 @@
+{
+    "success": true,
+    "state": 200,
+    "message": "响应成功",
+    "content": {
+        "pageNum": 1,
+        "pageSize": 10,
+        "size": 0,
+        "orderBy": null,
+        "startRow": 0,
+        "endRow": 0,
+        "total": 0,
+        "pages": 0,
+        "list": [],
+        "firstPage": 0,
+        "prePage": 0,
+        "nextPage": 0,
+        "lastPage": 0,
+        "isFirstPage": true,
+        "isLastPage": false,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": []
+    }
+}

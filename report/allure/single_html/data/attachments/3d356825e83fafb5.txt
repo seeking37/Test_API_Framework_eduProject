@@ -1,0 +1,3 @@
+SQL: SELECT resource_id FROM role_resource_relation WHERE role_id=7 ORDER BY resource_id
+预期值: ['1', '9', '10', '11', '12', '13', '14']
+实际值: ['1', '9', '10', '11', '12', '13', '14']

@@ -1,0 +1,1 @@
+["[{'status_code': 200}]", '["SELECT * FROM course WHERE course_name=\'新增课程测试6.9\'"]']

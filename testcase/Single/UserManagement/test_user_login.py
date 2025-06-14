@@ -13,7 +13,7 @@ class TestUserManager:
     # 场景，allure报告的目录结构
     @allure.story(next(c_id) + "用户登录")
     # 测试用例执行顺序设置
-    @pytest.mark.run(order=1)
+    # @pytest.mark.run(order=1)
     # 参数化，yaml数据驱动
     @pytest.mark.parametrize('base_info,testcase', get_testcase_yaml("./testcase/Single/UserManagement/user_login_data.yaml"))
     def test_user_login(self, base_info, testcase):
