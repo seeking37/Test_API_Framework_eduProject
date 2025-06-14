@@ -1,0 +1,14 @@
+[32mINFO    [0m common.recordlog:conftest.py:21 -------------接口测试开始--------------
+[32mINFO    [0m common.recordlog:sendrequest.py:142 接口名称：搜索用户
+[32mINFO    [0m common.recordlog:sendrequest.py:143 请求地址：http://47.113.145.175:8080/ssm_web/user/findAllUserByPage
+[32mINFO    [0m common.recordlog:sendrequest.py:144 请求方式：post
+[32mINFO    [0m common.recordlog:sendrequest.py:145 测试用例名称：2.正常搜索-按时间范围
+[32mINFO    [0m common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': 'e30bb109-1bcb-4762-914d-7010d331cc01'}
+[32mINFO    [0m common.recordlog:sendrequest.py:154 请求参数：{'json': {'currentPage': 1, 'pageSize': 10, 'startCreateTime': '2025-01-01', 'endCreateTime': '2025-06-02'}}
+[32mINFO    [0m common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":200,"message":"响应成功","content":{"pageNum":1,"pageSize":10,"size":0,"orderBy":null,"startRow":0,"endRow":0,"total":0,"pages":0,"list":[],"firstPage":0,"prePage":0,"nextPage":0,"lastPage":0,"isFirstPage":true,"isLastPage":false,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[]}}
+[32mINFO    [0m common.recordlog:assertions.py:308 yaml文件预期结果：[{'contains': {'message': '响应成功'}}, {'contains': {'status_code': 200}}, {'contains': {'success': True}}]
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【响应成功】,实际结果【响应成功】
+[1m[31mERROR   [0m common.recordlog:assertions.py:41 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【True】,实际结果【[True]】
+[32mINFO    [0m common.recordlog:assertions.py:339 测试成功
+[32mINFO    [0m common.recordlog:conftest.py:23 -------------接口测试结束--------------

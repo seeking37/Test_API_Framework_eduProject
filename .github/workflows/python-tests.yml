@@ -39,7 +39,7 @@ jobs:
         PYTHONPATH: ${{ github.workspace }}
       run: |
         source .venv/bin/activate
-        python -m pytest --alluredir=./allure-results
+        python run.py
 
     - name: Upload test results
       uses: actions/upload-artifact@v4

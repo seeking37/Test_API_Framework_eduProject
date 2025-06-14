@@ -1,0 +1,14 @@
+[32mINFO    [0m common.recordlog:conftest.py:21 -------------接口测试开始--------------
+[1m[31mERROR   [0m common.recordlog:readyaml.py:115 【extract.yaml】没有找到：token,--'token'
+[1m[31mERROR   [0m common.recordlog:readyaml.py:115 【extract.yaml】没有找到：token,--'token'
+[32mINFO    [0m common.recordlog:sendrequest.py:142 接口名称：3修改课程
+[32mINFO    [0m common.recordlog:sendrequest.py:143 请求地址：http://47.113.145.175:8080/ssm_web/course/saveOrUpdateCourse
+[32mINFO    [0m common.recordlog:sendrequest.py:144 请求方式：post
+[32mINFO    [0m common.recordlog:sendrequest.py:145 测试用例名称：3修改课程
+[32mINFO    [0m common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': 'None', 'Cookie': 'JSESSIONID=AF7CCFDA4D900B484D6407ED95C46A64'}
+[32mINFO    [0m common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': 'Python实现接口自动化测试', 'courseDescriptionMarkDown': '', 'courseImgUrl': '', 'courseListImg': '', 'courseName': 'Python编程自动化接口测试课程', 'discounts': '1', 'discountsTag': '泰坦', 'id': '27', 'previewFirstField': 'Python编程自动化接口测试课程', 'previewSecondField': 'Python编程自动化接口测试课程', 'price': '1', 'sales': '1', 'sortNum': '', 'status': '', 'teacherName': '泰坦', 'position': '讲师', 'description': '讲师简介', 'teacherDTO': {}, 'activityCourse': False, 'activityCourseDTO': {}}}
+[32mINFO    [0m common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":200,"message":"响应成功","content":null}
+[32mINFO    [0m common.recordlog:assertions.py:308 yaml文件预期结果：[{'contains': {'status_code': 200}}]
+[1m[31mERROR   [0m common.recordlog:assertions.py:41 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+[32mINFO    [0m common.recordlog:assertions.py:339 测试成功
+[32mINFO    [0m common.recordlog:conftest.py:23 -------------接口测试结束--------------

@@ -1,0 +1,18 @@
+INFO - 2025-06-14 17:17:17,391 - conftest.py:21 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-06-14 17:17:17,401 - sendrequest.py:142 -[sendrequest:run_main] - 接口名称：搜索用户
+INFO - 2025-06-14 17:17:17,401 - sendrequest.py:143 -[sendrequest:run_main] - 请求地址：http://127.0.0.1:8787/ssm_web/user/findAllUserByPage
+INFO - 2025-06-14 17:17:17,401 - sendrequest.py:144 -[sendrequest:run_main] - 请求方式：post
+INFO - 2025-06-14 17:17:17,401 - sendrequest.py:145 -[sendrequest:run_main] - 测试用例名称：13.页码超出范围
+INFO - 2025-06-14 17:17:17,401 - sendrequest.py:146 -[sendrequest:run_main] - 请求头：{'Content-Type': 'application/json', 'Authorization': 'e30bb109-1bcb-4762-914d-7010d331cc01'}
+INFO - 2025-06-14 17:17:17,401 - sendrequest.py:154 -[sendrequest:run_main] - 请求参数：{'json': {'currentPage': 999, 'pageSize': 10}}
+INFO - 2025-06-14 17:17:17,425 - sendrequest.py:108 -[sendrequest:send_request] - 接口返回信息：{
+  "message": "\u9875\u7801\u8d85\u51fa\u8303\u56f4\uff0c\u6700\u5927\u9875\u7801\u4e3a2",
+  "success": false
+}
+
+INFO - 2025-06-14 17:17:17,425 - assertions.py:308 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'message': '页码超出范围，最大页码为2'}}, {'contains': {'status_code': 400}}, {'contains': {'success': False}}]
+INFO - 2025-06-14 17:17:17,425 - assertions.py:65 -[assertions:contains_assert] - 响应文本断言成功：预期结果【页码超出范围，最大页码为2】,实际结果【页码超出范围，最大页码为2】
+ERROR - 2025-06-14 17:17:17,425 - assertions.py:41 -[assertions:contains_assert] - 接口返回码包含断言成功：预期结果【400】,实际结果【400】
+INFO - 2025-06-14 17:17:17,425 - assertions.py:65 -[assertions:contains_assert] - 响应文本断言成功：预期结果【False】,实际结果【[False]】
+INFO - 2025-06-14 17:17:17,425 - assertions.py:339 -[assertions:assert_result] - 测试成功
+INFO - 2025-06-14 17:17:17,432 - conftest.py:23 -[conftest:start_test_and_end] - -------------接口测试结束--------------

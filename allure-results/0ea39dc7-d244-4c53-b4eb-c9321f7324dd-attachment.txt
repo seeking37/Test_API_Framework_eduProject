@@ -1,0 +1,24 @@
+INFO - 2025-06-14 17:17:09,314 - sendrequest.py:142 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-06-14 17:17:09,314 - sendrequest.py:143 -[sendrequest:run_main] - 请求地址：http://47.113.145.175:8080/ssm_web/user/login
+INFO - 2025-06-14 17:17:09,314 - sendrequest.py:144 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-06-14 17:17:09,314 - sendrequest.py:145 -[sendrequest:run_main] - 测试用例名称：登录成功
+INFO - 2025-06-14 17:17:09,314 - sendrequest.py:146 -[sendrequest:run_main] - 请求头：None
+INFO - 2025-06-14 17:17:09,314 - sendrequest.py:157 -[sendrequest:run_main] - 请求参数：{'params': {'phone': '15811111122', 'password': '123456'}}
+INFO - 2025-06-14 17:17:09,473 - sendrequest.py:108 -[sendrequest:send_request] - 接口返回信息：{"success":true,"state":1,"message":"响应成功","content":{"access_token":"e30bb109-1bcb-4762-914d-7010d331cc01","user_id":100030022,"user":{"id":100030022,"name":"15811111122","portrait":null,"phone":"15811111122","password":"123456","reg_ip":null,"account_non_expired":null,"credentials_non_expired":null,"account_non_locked":null,"status":"ENABLE","is_del":null,"createTime":1594633432000,"updateTime":1594633432000}}}
+INFO - 2025-06-14 17:17:09,473 - assertions.py:308 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'message': '响应成功'}}, {'contains': {'status_code': 200}}]
+INFO - 2025-06-14 17:17:09,473 - assertions.py:65 -[assertions:contains_assert] - 响应文本断言成功：预期结果【响应成功】,实际结果【响应成功】
+ERROR - 2025-06-14 17:17:09,473 - assertions.py:41 -[assertions:contains_assert] - 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+INFO - 2025-06-14 17:17:09,481 - assertions.py:339 -[assertions:assert_result] - 测试成功
+INFO - 2025-06-14 17:17:09,481 - conftest.py:21 -[conftest:start_test_and_end] - -------------接口测试开始--------------
+INFO - 2025-06-14 17:17:09,489 - sendrequest.py:142 -[sendrequest:run_main] - 接口名称：用户登录
+INFO - 2025-06-14 17:17:09,491 - sendrequest.py:143 -[sendrequest:run_main] - 请求地址：http://47.113.145.175:8080/ssm_web/user/login
+INFO - 2025-06-14 17:17:09,491 - sendrequest.py:144 -[sendrequest:run_main] - 请求方式：POST
+INFO - 2025-06-14 17:17:09,491 - sendrequest.py:145 -[sendrequest:run_main] - 测试用例名称：获取登录态-超级管理员
+INFO - 2025-06-14 17:17:09,491 - sendrequest.py:146 -[sendrequest:run_main] - 请求头：None
+INFO - 2025-06-14 17:17:09,491 - sendrequest.py:157 -[sendrequest:run_main] - 请求参数：{'params': {'phone': '15588886666', 'password': '123456'}}
+INFO - 2025-06-14 17:17:09,641 - sendrequest.py:108 -[sendrequest:send_request] - 接口返回信息：{"success":true,"state":1,"message":"响应成功","content":{"access_token":"2f83acc5-3347-436d-b43f-c33b927b2e4e","user_id":100030026,"user":{"id":100030026,"name":"15588886666","portrait":null,"phone":"15588886666","password":"123456","reg_ip":null,"account_non_expired":null,"credentials_non_expired":null,"account_non_locked":null,"status":"ENABLE","is_del":null,"createTime":1598261004000,"updateTime":1598261007000}}}
+INFO - 2025-06-14 17:17:09,649 - assertions.py:308 -[assertions:assert_result] - yaml文件预期结果：[{'contains': {'message': '响应成功'}}, {'contains': {'status_code': 200}}]
+INFO - 2025-06-14 17:17:09,649 - assertions.py:65 -[assertions:contains_assert] - 响应文本断言成功：预期结果【响应成功】,实际结果【响应成功】
+ERROR - 2025-06-14 17:17:09,651 - assertions.py:41 -[assertions:contains_assert] - 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+INFO - 2025-06-14 17:17:09,651 - assertions.py:339 -[assertions:assert_result] - 测试成功
+INFO - 2025-06-14 17:17:09,651 - conftest.py:23 -[conftest:start_test_and_end] - -------------接口测试结束--------------

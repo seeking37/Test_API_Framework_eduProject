@@ -1,0 +1,14 @@
+[32mINFO    [0m common.recordlog:conftest.py:21 -------------接口测试开始--------------
+[32mINFO    [0m common.recordlog:sendrequest.py:142 接口名称：查询用户权限-无效Cookie
+[32mINFO    [0m common.recordlog:sendrequest.py:143 请求地址：http://47.113.145.175:8080/ssm_web/user/getUserPermissions
+[32mINFO    [0m common.recordlog:sendrequest.py:144 请求方式：get
+[32mINFO    [0m common.recordlog:sendrequest.py:145 测试用例名称：8.测试过期的Cookie
+[32mINFO    [0m common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '4698d314-1c50-4d71-ae34-9032f2a2ec42', 'Cookie': 'JSESSIONID=C96900131D02CC25EEEE2A28251CE76A'}
+[32mINFO    [0m common.recordlog:sendrequest.py:154 请求参数：{'json': {}}
+[32mINFO    [0m common.recordlog:sendrequest.py:108 接口返回信息：{"success":false,"state":400,"message":"获取失败","content":""}
+[32mINFO    [0m common.recordlog:assertions.py:308 yaml文件预期结果：[{'contains': {'state': 400}}, {'contains': {'success': False}}, {'contains': {'message': '获取失败'}}]
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【400】,实际结果【[400]】
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【False】,实际结果【[False]】
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【获取失败】,实际结果【获取失败】
+[32mINFO    [0m common.recordlog:assertions.py:339 测试成功
+[32mINFO    [0m common.recordlog:conftest.py:23 -------------接口测试结束--------------

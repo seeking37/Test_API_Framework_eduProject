@@ -1,0 +1,13 @@
+[32mINFO    [0m common.recordlog:conftest.py:21 -------------接口测试开始--------------
+[32mINFO    [0m common.recordlog:sendrequest.py:142 接口名称：用户登录
+[32mINFO    [0m common.recordlog:sendrequest.py:143 请求地址：http://47.113.145.175:8080/ssm_web/user/login
+[32mINFO    [0m common.recordlog:sendrequest.py:144 请求方式：POST
+[32mINFO    [0m common.recordlog:sendrequest.py:145 测试用例名称：手机号码为空
+[32mINFO    [0m common.recordlog:sendrequest.py:146 请求头：None
+[32mINFO    [0m common.recordlog:sendrequest.py:157 请求参数：{'params': {'phone': '', 'password': '1234567'}}
+[32mINFO    [0m common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":206,"message":"用户名密码错误","content":null}
+[32mINFO    [0m common.recordlog:assertions.py:308 yaml文件预期结果：[{'contains': {'message': '用户名密码错误'}}, {'contains': {'status_code': 200}}]
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【用户名密码错误】,实际结果【用户名密码错误】
+[1m[31mERROR   [0m common.recordlog:assertions.py:41 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+[32mINFO    [0m common.recordlog:assertions.py:339 测试成功
+[32mINFO    [0m common.recordlog:conftest.py:23 -------------接口测试结束--------------

@@ -1,0 +1,18 @@
+[32mINFO    [0m common.recordlog:conftest.py:21 -------------接口测试开始--------------
+[32mINFO    [0m common.recordlog:sendrequest.py:142 接口名称：搜索用户
+[32mINFO    [0m common.recordlog:sendrequest.py:143 请求地址：http://127.0.0.1:8787/ssm_web/user/findAllUserByPage
+[32mINFO    [0m common.recordlog:sendrequest.py:144 请求方式：post
+[32mINFO    [0m common.recordlog:sendrequest.py:145 测试用例名称：15.时间范围格式错误
+[32mINFO    [0m common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': 'e30bb109-1bcb-4762-914d-7010d331cc01'}
+[32mINFO    [0m common.recordlog:sendrequest.py:154 请求参数：{'json': {'currentPage': 1, 'pageSize': 10, 'startCreateTime': '2025-13-01', 'endCreateTime': '2025-12-31'}}
+[32mINFO    [0m common.recordlog:sendrequest.py:108 接口返回信息：{
+  "message": "\u65f6\u95f4\u683c\u5f0f\u9519\u8bef\uff0c\u6b63\u786e\u683c\u5f0f\u4e3a\uff1aYYYY-MM-DD",
+  "success": false
+}
+
+[32mINFO    [0m common.recordlog:assertions.py:308 yaml文件预期结果：[{'contains': {'message': '时间格式错误，正确格式为：YYYY-MM-DD'}}, {'contains': {'status_code': 400}}, {'contains': {'success': False}}]
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【时间格式错误，正确格式为：YYYY-MM-DD】,实际结果【时间格式错误，正确格式为：YYYY-MM-DD】
+[1m[31mERROR   [0m common.recordlog:assertions.py:41 接口返回码包含断言成功：预期结果【400】,实际结果【400】
+[32mINFO    [0m common.recordlog:assertions.py:65 响应文本断言成功：预期结果【False】,实际结果【[False]】
+[32mINFO    [0m common.recordlog:assertions.py:339 测试成功
+[32mINFO    [0m common.recordlog:conftest.py:23 -------------接口测试结束--------------
