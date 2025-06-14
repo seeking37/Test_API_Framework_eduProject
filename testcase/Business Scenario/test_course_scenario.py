@@ -39,7 +39,7 @@ class TestEBusinessScenario:
                     logs.error(f"数据库还原失败: {str(e)}")
 
     @allure.story(next(c_id) + '查询/添加/修改/更新课程流程')
-    @pytest.mark.parametrize('case_info', get_testcase_yaml('course_scenario.yml'))
+    @pytest.mark.parametrize('case_info', get_testcase_yaml('./testcase/Business Scenario/course_scenario.yml'))
     def test_course_scenario(self, case_info):
         allure.dynamic.title(case_info['baseInfo']['api_name'])
         RequestBase().specification_yaml(case_info)
