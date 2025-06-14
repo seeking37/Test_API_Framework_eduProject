@@ -41,9 +41,14 @@ jobs:
         source .venv/bin/activate
         python run.py
 
-    - name: Upload test results
+    - name: Upload Allure-HTML report
       uses: actions/upload-artifact@v4
-      if: always()
       with:
-        name: allure-results
-        path: allure-results/
+        name: html-report
+        path: report/allure/html/
+
+#    - name: Upload TM Report
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: tm-report
+#        path: ./report/tmreport/testReport.html

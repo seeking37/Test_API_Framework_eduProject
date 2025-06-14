@@ -16,7 +16,7 @@ API_TIMEOUT = 60
 SHEET_ID = 0
 
 # 生成的测试报告类型，可以生成两个风格的报告，allure或tm
-REPORT_TYPE = 'allure'
+REPORT_TYPE = 'tm'
 
 # 是否发送钉钉消息
 dd_msg = False
