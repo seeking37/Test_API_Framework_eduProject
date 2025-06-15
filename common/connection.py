@@ -44,11 +44,12 @@ class ConnectMysql:
                 ping=0,           # ping MySQL服务端，检查是否服务可用
                 **mysql_conf
             )
-            logs.info("""成功创建MySQL连接池---
-            host：{host}
-            port：{port}
-            db：{database}
-            """.format(**mysql_conf))
+            # logs.info("""成功创建MySQL连接池---
+            # host：{host}
+            # port：{port}
+            # db：{database}
+            # """.format(**mysql_conf))
+            logs.info("成功创建MySQL连接池")
         return cls._pool
 
     def __init__(self):

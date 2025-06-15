@@ -134,9 +134,8 @@ class RequestBase(object):
                     # 断言结果解析替换
                     # 字符串形式的列表转换为list类型
                     validation = eval((self.replace_load(val)).replace('true', 'True').replace('false', 'False'))
-
-                    allure_validation = str([str(list(i.values())) for i in validation])
-                    allure.attach(allure_validation, "预期结果", allure.attachment_type.TEXT)
+                    # allure_validation = str([str(list(i.values())) for i in validation])
+                    # allure.attach(allure_validation, "预期结果", allure.attachment_type.TEXT)
                     # 处理断言
                     assert_res.assert_result(validation, res_json, status_code)
                 except JSONDecodeError as js:

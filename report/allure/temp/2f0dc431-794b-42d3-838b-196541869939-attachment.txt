@@ -1,0 +1,3 @@
+JSONPath 'content.total':
+预期值: 0
+实际值: 0

@@ -1,0 +1,195 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+ERROR    common.recordlog:readyaml.py:115 【extract.yaml】没有找到：authorization,--'authorization'
+ERROR    common.recordlog:readyaml.py:115 【extract.yaml】没有找到：authorization,--'authorization'
+INFO     common.recordlog:sendrequest.py:142 接口名称：搜索用户
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://127.0.0.1:8787/ssm_web/user/findAllUserByPage
+INFO     common.recordlog:sendrequest.py:144 请求方式：post
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：16.验证分页信息完整性
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': 'None'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'currentPage': 1, 'pageSize': 10}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{
+  "content": {
+    "firstPage": 1,
+    "hasNextPage": true,
+    "hasPreviousPage": false,
+    "isFirstPage": true,
+    "isLastPage": false,
+    "lastPage": 2,
+    "list": [
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030011",
+        "is_del": "0",
+        "name": "15321919666",
+        "password": "123456",
+        "phone": "15321919666",
+        "portrait": "https://edu-lagou.oss-cn-beijing.aliyuncs.com/images/2020/06/28/15933251448762927.png",
+        "reg_ip": "",
+        "status": "DISABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030012",
+        "is_del": "0",
+        "name": "15588886623",
+        "password": "123456",
+        "phone": "15588886623",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "DISABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030013",
+        "is_del": "0",
+        "name": "15588886665",
+        "password": "123456",
+        "phone": "15588886665",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "DISABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030014",
+        "is_del": "0",
+        "name": "15588886664",
+        "password": "123456",
+        "phone": "15588886664",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "ENABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030015",
+        "is_del": "0",
+        "name": "15588886663",
+        "password": "123456",
+        "phone": "15588886663",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "ENABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030016",
+        "is_del": "0",
+        "name": "15588886644",
+        "password": "123456",
+        "phone": "15588886644",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "ENABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030017",
+        "is_del": "1",
+        "name": "15811111111",
+        "password": "123456",
+        "phone": "15811111111",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "DISABLE",
+        "update_time": "13/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030018",
+        "is_del": "0",
+        "name": "15588886123",
+        "password": "123456",
+        "phone": "15588886123",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "ENABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030019",
+        "is_del": "0",
+        "name": "15588886234",
+        "password": "123456",
+        "phone": "15588886234",
+        "portrait": "https://edu-lagou.oss-cn-beijing.aliyuncs.com/images/2020/07/10/15943594999396473.png",
+        "reg_ip": "",
+        "status": "ENABLE",
+        "update_time": "10/7/2020"
+      },
+      {
+        "account_non_expired": "1",
+        "account_non_locked": "1",
+        "create_time": "10/7/2020",
+        "credentials_non_expired": "1",
+        "id": "100030020",
+        "is_del": "0",
+        "name": "18211111111",
+        "password": "123456",
+        "phone": "18211111111",
+        "portrait": "",
+        "reg_ip": "",
+        "status": "ENABLE",
+        "update_time": "10/7/2020"
+      }
+    ],
+    "nextPage": 2,
+    "pageNum": 1,
+    "pageSize": 10,
+    "prePage": 0,
+    "size": 10,
+    "total": 13
+  },
+  "message": "\u54cd\u5e94\u6210\u529f",
+  "status_code": 200,
+  "success": true
+}
+
+INFO     common.recordlog:assertions.py:298 yaml文件预期结果：[{'contains': {'message': '响应成功'}}, {'eq': {'status_code': 200}}, {'eq': {'success': True}}, {'eq': {'content.firstPage': 1}}, {'eq': {'content.prePage': 0}}, {'eq': {'content.nextPage': 2}}, {'eq': {'content.lastPage': 2}}, {'eq': {'content.isFirstPage': True}}, {'eq': {'content.isLastPage': False}}, {'eq': {'content.hasPreviousPage': False}}, {'eq': {'content.hasNextPage': True}}]
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【响应成功】,实际结果【响应成功】
+ERROR    common.recordlog:assertions.py:272 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'success' 预期值: True, 实际值: True
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.firstPage' 预期值: 1, 实际值: 1
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.prePage' 预期值: 0, 实际值: 0
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.nextPage' 预期值: 2, 实际值: 2
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.lastPage' 预期值: 2, 实际值: 2
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.isFirstPage' 预期值: True, 实际值: True
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.isLastPage' 预期值: False, 实际值: False
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.hasPreviousPage' 预期值: False, 实际值: False
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'content.hasNextPage' 预期值: True, 实际值: True
+INFO     common.recordlog:assertions.py:326 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

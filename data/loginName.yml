@@ -14,4 +14,4 @@
         status_code: 200
     extract:
       cookie: 'headers:Set-Cookie: (.+?);'
-      authorization: 'body:$..access_token'
+      token: 'body:$..access_token'

@@ -1,4 +1,0 @@
-{
-    "message": "每页条数不能小于1",
-    "success": false
-}

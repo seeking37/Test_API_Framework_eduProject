@@ -14,11 +14,11 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
-        - contains:
+        - eq:
             content.list[0].name: "15321919666"
 
     - case_name: 2.正常搜索-按时间范围
@@ -30,9 +30,9 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
 
     - case_name: 3.正常搜索-组合条件
@@ -45,9 +45,9 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
 
     - case_name: 4.正常搜索-手机号和时间均为空
@@ -57,11 +57,11 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
-        - contains:
+        - eq:
             content.total: 12
 
     - case_name: 5.分页查询-第二页
@@ -72,19 +72,19 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
-        - contains:
+        - eq:
             content.pageNum: 2
-        - contains:
+        - eq:
             content.pageSize: 10
-        - contains:
+        - eq:
             content.isFirstPage: false
-        - contains:
+        - eq:
             content.hasPreviousPage: true
-        - contains:
+        - eq:
             content.list[0].name: "15588886234"
 
     - case_name: 6.分页查询-每页5条
@@ -94,17 +94,17 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
-        - contains:
+        - eq:
             content.pageSize: 5
-        - contains:
+        - eq:
             content.size: 5
-        - contains:
+        - eq:
             content.isFirstPage: true
-        - contains:
+        - eq:
             content.isLastPage: false
 
     - case_name: 7.缺少必填参数currentPage
@@ -115,9 +115,9 @@
       validation:
         - contains:
             message: "缺少必填参数currentPage"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 8.缺少必填参数pageSize
@@ -128,9 +128,9 @@
       validation:
         - contains:
             message: "缺少必填参数pageSize"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 9.请求参数为空
@@ -139,9 +139,9 @@
       validation:
         - contains:
             message: "请求参数不能为空"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 10.参数类型错误
@@ -153,9 +153,9 @@
       validation:
         - contains:
             message: "参数类型错误，currentPage和pageSize必须为整数"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 11.页码小于1
@@ -167,9 +167,9 @@
       validation:
         - contains:
             message: "页码必须大于0"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 12.每页条数小于0
@@ -181,9 +181,9 @@
       validation:
         - contains:
             message: "每页条数不能小于1"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 13.页码超出范围
@@ -194,9 +194,9 @@
       validation:
         - contains:
             message: "页码超出范围，最大页码为2"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 14.搜索不存在的用户
@@ -208,13 +208,13 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
-        - contains:
+        - eq:
             content.list: []
-        - contains:
+        - eq:
             content.total: 0
 
     - case_name: 15.时间范围格式错误
@@ -227,9 +227,9 @@
       validation:
         - contains:
             message: "时间格式错误，正确格式为：YYYY-MM-DD"
-        - contains:
+        - eq:
             status_code: 400
-        - contains:
+        - eq:
             success: false
 
     - case_name: 16.验证分页信息完整性
@@ -240,23 +240,23 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
-        - contains:
+        - eq:
             success: true
-        - contains:
+        - eq:
             content.firstPage: 1
-        - contains:
+        - eq:
             content.prePage: 0
-        - contains:
+        - eq:
             content.nextPage: 2
-        - contains:
+        - eq:
             content.lastPage: 2
-        - contains:
+        - eq:
             content.isFirstPage: true
-        - contains:
+        - eq:
             content.isLastPage: false
-        - contains:
+        - eq:
             content.hasPreviousPage: false
-        - contains:
+        - eq:
             content.hasNextPage: true

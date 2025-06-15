@@ -11,13 +11,13 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
       extract:
         cookie_1: 'headers:Set-Cookie: (.+?);'
         token_1: 'body:$..access_token'
 - baseInfo:
-    api_name: 查询用户权限-超级管理员
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
@@ -29,7 +29,7 @@
       json:
         {}
       validation:
-        - contains:
+        - eq:
             status_code: 200
         - eq_db:
             ${get_extract_data(resourceId_1)}: "SELECT resource_id FROM role_resource_relation WHERE role_id=1 ORDER BY resource_id"
@@ -49,13 +49,13 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
       extract:
         cookie_3: 'headers:Set-Cookie: (.+?);'
         token_3: 'body:$..access_token'
 - baseInfo:
-    api_name: 查询用户权限-课程管理员
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
@@ -67,7 +67,7 @@
       json:
         {}
       validation:
-        - contains:
+        - eq:
             status_code: 200
         - eq_db:
             ${get_extract_data(resourceId_3)}: "SELECT resource_id FROM role_resource_relation WHERE role_id=3 ORDER BY resource_id"
@@ -87,13 +87,13 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
       extract:
         cookie_7: 'headers:Set-Cookie: (.+?);'
         token_7: 'body:$..access_token'
 - baseInfo:
-    api_name: 查询用户权限-普通用户
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
@@ -105,7 +105,7 @@
       json:
         {}
       validation:
-        - contains:
+        - eq:
             status_code: 200
         - eq_db:
             ${get_extract_data(resourceId_7)}: "SELECT resource_id FROM role_resource_relation WHERE role_id=7 ORDER BY resource_id"
@@ -125,13 +125,13 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
       extract:
         cookie_2_7: 'headers:Set-Cookie: (.+?);'
         token_2_7: 'body:$..access_token'
 - baseInfo:
-    api_name: 查询用户组合权限-权限管理员+普通用户
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
@@ -139,11 +139,11 @@
       Authorization: ${get_extract_data(token_2_7)}
       Cookie: ${get_extract_data(cookie_2_7)}
   testCase:
-    - case_name: 3.查询用户组合权限-权限管理员+普通用户
+    - case_name: 4.查询用户组合权限-权限管理员+普通用户
       json:
         {}
       validation:
-        - contains:
+        - eq:
             status_code: 200
         - eq_db:
             ${get_extract_data(resourceId_2_7)}: "SELECT DISTINCT resource_id FROM role_resource_relation WHERE role_id IN (2,7) ORDER BY resource_id"
@@ -163,13 +163,13 @@
       validation:
         - contains:
             message: "响应成功"
-        - contains:
+        - eq:
             status_code: 200
       extract:
         cookie_null: 'headers:Set-Cookie: (.+?);'
         token_null: 'body:$..access_token'
 - baseInfo:
-    api_name: 查询用户权限-无权限用户
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
@@ -177,11 +177,11 @@
       Authorization: ${get_extract_data(token_null)}
       Cookie: ${get_extract_data(cookie_null)}
   testCase:
-    - case_name: 4.查询用户权限-无权限用户
+    - case_name: 5.查询用户权限-无权限用户
       json:
         {}
       validation:
-        - contains:
+        - eq:
             status_code: 200
         - eq_db:
             ${get_extract_data(resourceId_null)}: []
@@ -190,27 +190,27 @@
 
 - baseInfo:
     description: 测试缺少Authorization头
-    api_name: 查询用户权限-缺少Authorization
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
       Content-Type: application/json
       Cookie: ${get_extract_data(cookie_1)}
   testCase:
-    - case_name: 5.测试缺少Authorization头
+    - case_name: 6.测试缺少Authorization头
       json:
         {}
       validation:
-        - contains:
+        - eq:
             state: 400
-        - contains:
+        - eq:
             success: false
         - contains:
             message: "获取失败"
 
 - baseInfo:
     description: 测试过期的Authorization
-    api_name: 查询用户权限-无效Authorization
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
@@ -218,40 +218,40 @@
       Authorization: 70986608-4296-45fd-8c5d-864c83347444
       Cookie: ${get_extract_data(cookie_7)}
   testCase:
-    - case_name: 6.测试过期的Authorization
+    - case_name: 7.测试过期的Authorization
       json:
         {}
       validation:
-        - contains:
+        - eq:
             state: 400
-        - contains:
+        - eq:
             success: false
         - contains:
             message: "获取失败"
 
 - baseInfo:
     description: 测试缺少Cookie
-    api_name: 查询用户权限-缺少Cookie
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
       Content-Type: application/json
       Authorization: ${get_extract_data(token_1)}
   testCase:
-    - case_name: 7.测试缺少Cookie
+    - case_name: 8.测试缺少Cookie
       json:
         {}
       validation:
-        - contains:
+        - eq:
             state: 400
-        - contains:
+        - eq:
             success: false
         - contains:
             message: "获取失败"
 
 - baseInfo:
     description: 测试过期的Cookie
-    api_name: 查询用户权限-无效Cookie
+    api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
     method: get
     header:
@@ -259,13 +259,13 @@
       Authorization: ${get_extract_data(token_7)}
       Cookie: JSESSIONID=C96900131D02CC25EEEE2A28251CE76A
   testCase:
-    - case_name: 8.测试过期的Cookie
+    - case_name: 9.测试过期的Cookie
       json:
         {}
       validation:
-        - contains:
+        - eq:
             state: 400
-        - contains:
+        - eq:
             success: false
         - contains:
             message: "获取失败"

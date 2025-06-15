@@ -1,0 +1,3 @@
+JSONPath 'content.size':
+预期值: 5
+实际值: 5

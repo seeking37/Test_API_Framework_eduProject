@@ -1,0 +1,18 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：查询用户列表
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://127.0.0.1:8787/ssm_web/user/findAllUserByPage
+INFO     common.recordlog:sendrequest.py:144 请求方式：post
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：8.页码小于1
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '36118e67-57a1-42f3-ae03-b038a95bb10e'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'currentPage': 0, 'pageSize': 10}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{
+  "message": "\u9875\u7801\u5fc5\u987b\u5927\u4e8e0",
+  "success": false
+}
+
+INFO     common.recordlog:assertions.py:308 yaml文件预期结果：[{'contains': {'message': '页码必须大于0'}}, {'contains': {'status_code': 400}}, {'contains': {'success': False}}]
+INFO     common.recordlog:assertions.py:65 响应文本断言成功：预期结果【页码必须大于0】,实际结果【页码必须大于0】
+ERROR    common.recordlog:assertions.py:41 接口返回码包含断言成功：预期结果【400】,实际结果【400】
+INFO     common.recordlog:assertions.py:65 响应文本断言成功：预期结果【False】,实际结果【[False]】
+INFO     common.recordlog:assertions.py:339 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

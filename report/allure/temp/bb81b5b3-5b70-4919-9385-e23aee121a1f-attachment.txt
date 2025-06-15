@@ -1,0 +1,3 @@
+JSONPath 'content.list':
+预期值: []
+实际值: []

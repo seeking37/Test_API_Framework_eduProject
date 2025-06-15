@@ -1,0 +1,3 @@
+SQL: SELECT course_name FROM course ORDER BY id DESC LIMIT 1;
+预期值: ['新增课程测试6.9']
+实际值: ['新增课程测试6.9']

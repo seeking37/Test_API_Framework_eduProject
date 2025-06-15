@@ -36,7 +36,8 @@ class MysqlManager:
                   f"-h {self.conf.get_section_mysql('host')} " \
                   f"{self.conf.get_section_mysql('database')}{table_param} > {backup_file}"
             
-            logs.info(f"执行MySQL备份命令: {sql}")
+            logs.info(f"执行MySQL备份命令")
+            # logs.info(f"执行MySQL备份命令: {sql}")
             os.system(sql)
             return backup_file
             
@@ -58,7 +59,8 @@ class MysqlManager:
                   f"-h {self.conf.get_section_mysql('host')} " \
                   f"{self.conf.get_section_mysql('database')} < {backup_file}"
             
-            logs.info(f"执行MySQL还原命令: {sql}")
+            # logs.info(f"执行MySQL还原命令: {sql}")
+            logs.info(f"执行MySQL还原命令")
             os.system(sql)
             
         except Exception as e:
@@ -79,7 +81,8 @@ class MysqlManager:
                   f"-h {self.conf.get_section_mysql('host')} " \
                   f"{self.conf.get_section_mysql('database')} < {init_file}"
             
-            logs.info(f"执行MySQL数据初始化命令: {sql}")
+            # logs.info(f"执行MySQL数据初始化命令: {sql}")
+            logs.info(f"执行MySQL数据初始化命令")
             os.system(sql)
             
         except Exception as e:

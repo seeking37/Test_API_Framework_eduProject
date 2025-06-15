@@ -1,256 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="50" time="13.107" timestamp="2025-06-15T00:03:25.289700+08:00" hostname="SQG"><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info0]" time="5.700" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info1]" time="0.234" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info2]" time="0.128" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info3]" time="1.990" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info0]" time="0.090" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info1]" time="0.276" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info2]" time="0.092" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info3]" time="0.247" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info4]" time="0.094" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info5]" time="0.229" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info6]" time="0.092" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info7]" time="0.273" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info8]" time="0.092" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info9]" time="0.094"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
-
-    def json(self, **kwargs):
-        r"""Returns the json-encoded content of a response, if any.
-    
-        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
-        :raises requests.exceptions.JSONDecodeError: If the response body does not
-            contain valid json.
-        """
-    
-        if not self.encoding and self.content and len(self.content) &gt; 3:
-            # No encoding set. JSON RFC 4627 section 3 states we should expect
-            # UTF-8, -16 or -32. Detect which one to use; If the detection or
-            # decoding fails, fall back to `self.text` (using charset_normalizer to make
-            # a best guess).
-            encoding = guess_json_utf(self.content)
-            if encoding is not None:
-                try:
-                    return complexjson.loads(self.content.decode(encoding), **kwargs)
-                except UnicodeDecodeError:
-                    # Wrong UTF codec detected; usually because it's not UTF-8
-                    # but some other 8-bit codec.  This is an RFC violation,
-                    # and the server didn't bother to tell us what codec *was*
-                    # used.
-                    pass
-                except JSONDecodeError as e:
-                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-    
-        try:
-&gt;           return complexjson.loads(self.text, **kwargs)
-
-..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:974: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py:346: in loads
-    return _default_decoder.decode(s)
-C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = &lt;json.decoder.JSONDecoder object at 0x00000248B5D953D0&gt;
-s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type="text/css"&gt;bod...e of the root cause is available in the server logs.&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
-idx = 0
-
-    def raw_decode(self, s, idx=0):
-        """Decode a JSON document from ``s`` (a ``str`` beginning with
-        a JSON document) and return a 2-tuple of the Python
-        representation and the index in ``s`` where the document ended.
-    
-        This can be used to decode a JSON document from a string that may
-        have extraneous data at the end.
-    
-        """
-        try:
-            obj, end = self.scan_once(s, idx)
-        except StopIteration as err:
-&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
-E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: JSONDecodeError
-
-During handling of the above exception, another exception occurred:
-
-self = &lt;test_user_permissions.TestUserManager object at 0x00000248EB31C7D0&gt;
-case_info = {'baseInfo': {'api_name': '查询用户权限-无权限用户', 'header': {'Authorization': '${get_extract_data(token_null)}', 'Content-Type..._extract_data(cookie_null)}'}, 'method': 'get', 'url': '/ssm_web/user/getUserPermissions'}, 'testCase': [{'json': {}}]}
-
-    @allure.story(next(c_id) + "查询用户权限")
-    # @pytest.mark.run(order=1)
-    @pytest.mark.parametrize('case_info', get_testcase_yaml("./testcase/Business Scenario/user_permissions_data.yaml"))
-    def test_user_permissions(self, case_info):
-        allure.dynamic.title(case_info['baseInfo']['api_name'])
-&gt;       RequestBase().specification_yaml(case_info)
-
-testcase\Business Scenario\test_user_permissions.py:17: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-base\apiutil_business.py:150: in specification_yaml
-    raise e
-base\apiutil_business.py:124: in specification_yaml
-    allure.attach(self.allure_attach_response(res.json()), '接口响应信息', allure.attachment_type.TEXT)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = &lt;Response [500]&gt;, kwargs = {}
-
-    def json(self, **kwargs):
-        r"""Returns the json-encoded content of a response, if any.
-    
-        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
-        :raises requests.exceptions.JSONDecodeError: If the response body does not
-            contain valid json.
-        """
-    
-        if not self.encoding and self.content and len(self.content) &gt; 3:
-            # No encoding set. JSON RFC 4627 section 3 states we should expect
-            # UTF-8, -16 or -32. Detect which one to use; If the detection or
-            # decoding fails, fall back to `self.text` (using charset_normalizer to make
-            # a best guess).
-            encoding = guess_json_utf(self.content)
-            if encoding is not None:
-                try:
-                    return complexjson.loads(self.content.decode(encoding), **kwargs)
-                except UnicodeDecodeError:
-                    # Wrong UTF codec detected; usually because it's not UTF-8
-                    # but some other 8-bit codec.  This is an RFC violation,
-                    # and the server didn't bother to tell us what codec *was*
-                    # used.
-                    pass
-                except JSONDecodeError as e:
-                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-    
-        try:
-            return complexjson.loads(self.text, **kwargs)
-        except JSONDecodeError as e:
-            # Catch JSON-related errors and raise as requests.JSONDecodeError
-            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError
-&gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info10]" time="0.130"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
-
-    def json(self, **kwargs):
-        r"""Returns the json-encoded content of a response, if any.
-    
-        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
-        :raises requests.exceptions.JSONDecodeError: If the response body does not
-            contain valid json.
-        """
-    
-        if not self.encoding and self.content and len(self.content) &gt; 3:
-            # No encoding set. JSON RFC 4627 section 3 states we should expect
-            # UTF-8, -16 or -32. Detect which one to use; If the detection or
-            # decoding fails, fall back to `self.text` (using charset_normalizer to make
-            # a best guess).
-            encoding = guess_json_utf(self.content)
-            if encoding is not None:
-                try:
-                    return complexjson.loads(self.content.decode(encoding), **kwargs)
-                except UnicodeDecodeError:
-                    # Wrong UTF codec detected; usually because it's not UTF-8
-                    # but some other 8-bit codec.  This is an RFC violation,
-                    # and the server didn't bother to tell us what codec *was*
-                    # used.
-                    pass
-                except JSONDecodeError as e:
-                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-    
-        try:
-&gt;           return complexjson.loads(self.text, **kwargs)
-
-..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:974: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py:346: in loads
-    return _default_decoder.decode(s)
-C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = &lt;json.decoder.JSONDecoder object at 0x00000248B5D953D0&gt;
-s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type="text/css"&gt;bod...e of the root cause is available in the server logs.&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
-idx = 0
-
-    def raw_decode(self, s, idx=0):
-        """Decode a JSON document from ``s`` (a ``str`` beginning with
-        a JSON document) and return a 2-tuple of the Python
-        representation and the index in ``s`` where the document ended.
-    
-        This can be used to decode a JSON document from a string that may
-        have extraneous data at the end.
-    
-        """
-        try:
-            obj, end = self.scan_once(s, idx)
-        except StopIteration as err:
-&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
-E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: JSONDecodeError
-
-During handling of the above exception, another exception occurred:
-
-self = &lt;test_user_permissions.TestUserManager object at 0x00000248EB31C890&gt;
-case_info = {'baseInfo': {'api_name': '查询用户权限-缺少Authorization', 'description': '测试缺少Authorization头', 'header': {'Content-Type': 'application/json', 'Cookie': '${get_extract_data(cookie_1)}'}, 'method': 'get', ...}, 'testCase': [{'json': {}}]}
-
-    @allure.story(next(c_id) + "查询用户权限")
-    # @pytest.mark.run(order=1)
-    @pytest.mark.parametrize('case_info', get_testcase_yaml("./testcase/Business Scenario/user_permissions_data.yaml"))
-    def test_user_permissions(self, case_info):
-        allure.dynamic.title(case_info['baseInfo']['api_name'])
-&gt;       RequestBase().specification_yaml(case_info)
-
-testcase\Business Scenario\test_user_permissions.py:17: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-base\apiutil_business.py:150: in specification_yaml
-    raise e
-base\apiutil_business.py:124: in specification_yaml
-    allure.attach(self.allure_attach_response(res.json()), '接口响应信息', allure.attachment_type.TEXT)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = &lt;Response [500]&gt;, kwargs = {}
-
-    def json(self, **kwargs):
-        r"""Returns the json-encoded content of a response, if any.
-    
-        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
-        :raises requests.exceptions.JSONDecodeError: If the response body does not
-            contain valid json.
-        """
-    
-        if not self.encoding and self.content and len(self.content) &gt; 3:
-            # No encoding set. JSON RFC 4627 section 3 states we should expect
-            # UTF-8, -16 or -32. Detect which one to use; If the detection or
-            # decoding fails, fall back to `self.text` (using charset_normalizer to make
-            # a best guess).
-            encoding = guess_json_utf(self.content)
-            if encoding is not None:
-                try:
-                    return complexjson.loads(self.content.decode(encoding), **kwargs)
-                except UnicodeDecodeError:
-                    # Wrong UTF codec detected; usually because it's not UTF-8
-                    # but some other 8-bit codec.  This is an RFC violation,
-                    # and the server didn't bother to tell us what codec *was*
-                    # used.
-                    pass
-                except JSONDecodeError as e:
-                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-    
-        try:
-            return complexjson.loads(self.text, **kwargs)
-        except JSONDecodeError as e:
-            # Catch JSON-related errors and raise as requests.JSONDecodeError
-            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError
-&gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info11]" time="0.094" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info12]" time="0.110" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info13]" time="0.102" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info0-testcase0]" time="0.114" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info1-testcase1]" time="0.104" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info2-testcase2]" time="0.101" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info3-testcase3]" time="0.039" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info4-testcase4]" time="0.036" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info5-testcase5]" time="0.035" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info6-testcase6]" time="0.015" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info7-testcase7]" time="0.015" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info8-testcase8]" time="0.014" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info9-testcase9]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info0-testcase0]" time="0.131" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info1-testcase1]" time="0.123" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info2-testcase2]" time="0.124" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info3-testcase3]" time="0.110" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info4-testcase4]" time="0.096"><failure message="AssertionError">self = &lt;testcase.Single.UserManagement.test_user_find.TestUserManager object at 0x00000248EB435910&gt;
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="50" time="14.018" timestamp="2025-06-15T15:03:23.709842+08:00" hostname="SQG"><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info0-testcase0]" time="0.222" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info1-testcase1]" time="0.093" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info2-testcase2]" time="0.078" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info3-testcase3]" time="0.104" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info4-testcase4]" time="0.115" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info5-testcase5]" time="0.115" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info0-testcase0]" time="0.121" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info1-testcase1]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info2-testcase2]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info3-testcase3]" time="0.037" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info4-testcase4]" time="0.009" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info5-testcase5]" time="0.009" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info6-testcase6]" time="0.025" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info7-testcase7]" time="0.032" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info8-testcase8]" time="0.019" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info9-testcase9]" time="0.011" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info0-testcase0]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info1-testcase1]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info2-testcase2]" time="0.105" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info3-testcase3]" time="0.108" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info4-testcase4]" time="0.099"><failure message="AssertionError">self = &lt;testcase.Single.UserManagement.test_user_find.TestUserManager object at 0x0000020DF9291B80&gt;
 base_info = {'api_name': '搜索用户', 'header': {'Authorization': '${get_extract_data(authorization)}', 'Content-Type': 'application/json'}, 'method': 'post', 'url': '/ssm_web/user/findAllUserByPage'}
 testcase = {'json': {'currentPage': 2, 'pageSize': 10, 'username': '15588886234'}}
 
     @allure.story(next(c_id) + "搜索用户")
-    # @pytest.mark.run(order=2)
+    @pytest.mark.run(order=3)
     @pytest.mark.parametrize('base_info,testcase', get_testcase_yaml("./testcase/Single/UserManagement/user_search_data.yaml"))
     def test_search_user(self, base_info, testcase):
         allure.dynamic.title(testcase['case_name'])
 &gt;       RequestBase().specification_yaml(base_info, testcase)
 
-testcase\Single\UserManagement\test_user_find.py:26: 
+testcase\Single\UserManagement\test_user_find.py:28: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-base\apiutil.py:186: in specification_yaml
+base\apiutil.py:188: in specification_yaml
     raise e
-base\apiutil.py:165: in specification_yaml
+base\apiutil.py:167: in specification_yaml
     self.asserts.assert_result(validation, res_json, status_code)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-self = &lt;common.assertions.Assertions object at 0x00000248EB31FDA0&gt;
-expected = [{'contains': {'message': '响应成功'}}, {'contains': {'status_code': 200}}, {'contains': {'success': True}}, {'contains': {'content.pageNum': 2}}, {'contains': {'content.pageSize': 10}}, {'contains': {'content.isFirstPage': False}}, ...]
+self = &lt;common.assertions.Assertions object at 0x0000020DF748BEF0&gt;
+expected = [{'contains': {'message': '响应成功'}}, {'eq': {'status_code': 200}}, {'eq': {'success': True}}, {'eq': {'content.pageNum': 2}}, {'eq': {'content.pageSize': 10}}, {'eq': {'content.isFirstPage': False}}, ...]
 response = {'content': {'endRow': 0, 'firstPage': 1, 'hasNextPage': False, 'hasPreviousPage': True, ...}, 'message': '响应成功', 'state': 200, 'success': True}
 status_code = 200
 
@@ -273,16 +41,13 @@ status_code = 200
                         flag = self.contains_assert(value, response, status_code)
                         all_flag = all_flag + flag
                     elif key == "eq":
-                        flag = self.equal_assert(value, response)
+                        flag = self.equal_assert(value, response, status_code)
                         all_flag = all_flag + flag
                     elif key == 'ne':
-                        flag = self.not_equal_assert(value, response)
+                        flag = self.not_equal_assert(value, response, status_code)
                         all_flag = all_flag + flag
                     elif key == 'rv':
                         flag = self.assert_response_any(actual_results=response, expected_results=value)
-                        all_flag = all_flag + flag
-                    elif key == 'db':
-                        flag = self.mysql_assert(value)
                         all_flag = all_flag + flag
                     elif key == 'eq_db':
                         flag = self.equal_mysql_assert(value)
@@ -302,4 +67,236 @@ status_code = 200
 &gt;           assert False
 E           AssertionError
 
-common\assertions.py:343: AssertionError</failure></testcase><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info5-testcase5]" time="0.117" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info6-testcase6]" time="0.024" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info7-testcase7]" time="0.037" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info8-testcase8]" time="0.035" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info9-testcase9]" time="0.033" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info10-testcase10]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info11-testcase11]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info12-testcase12]" time="0.038" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info13-testcase13]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info14-testcase14]" time="0.035" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info15-testcase15]" time="0.039" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info0-testcase0]" time="0.096" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info1-testcase1]" time="0.113" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info2-testcase2]" time="0.093" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info3-testcase3]" time="0.085" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info4-testcase4]" time="0.121" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info5-testcase5]" time="0.095" /></testsuite></testsuites>
+common\assertions.py:330: AssertionError</failure></testcase><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info5-testcase5]" time="0.113" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info6-testcase6]" time="0.031" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info7-testcase7]" time="0.010" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info8-testcase8]" time="0.025" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info9-testcase9]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info10-testcase10]" time="0.010" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info11-testcase11]" time="0.030" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info12-testcase12]" time="0.036" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info13-testcase13]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info14-testcase14]" time="0.037" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info15-testcase15]" time="0.036" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info0]" time="0.121" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info1]" time="0.806" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info2]" time="0.131" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info3]" time="0.261" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info4]" time="0.117" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info5]" time="0.209" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info6]" time="0.116" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info7]" time="0.283" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info8]" time="0.103" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info9]" time="0.100"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+&gt;           return complexjson.loads(self.text, **kwargs)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:974: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.decoder.JSONDecoder object at 0x0000020DC3BE5610&gt;
+s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type="text/css"&gt;bod...e of the root cause is available in the server logs.&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: JSONDecodeError
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;test_user_permissions.TestUserManager object at 0x0000020DF92B14C0&gt;
+case_info = {'baseInfo': {'api_name': '查询用户权限', 'header': {'Authorization': '${get_extract_data(token_null)}', 'Content-Type': 'ap..._extract_data(cookie_null)}'}, 'method': 'get', 'url': '/ssm_web/user/getUserPermissions'}, 'testCase': [{'json': {}}]}
+
+    @allure.story(next(c_id) + "查询用户权限（业务场景）")
+    @pytest.mark.run(order=4)
+    @pytest.mark.parametrize('case_info', get_testcase_yaml("./testcase/Business Scenario/user_permissions_data.yaml"))
+    def test_user_permissions(self, case_info):
+        allure.dynamic.title(case_info['testCase'][0]['case_name'])
+&gt;       RequestBase().specification_yaml(case_info)
+
+testcase\Business Scenario\test_user_permissions.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil_business.py:149: in specification_yaml
+    raise e
+base\apiutil_business.py:124: in specification_yaml
+    allure.attach(self.allure_attach_response(res.json()), '接口响应信息', allure.attachment_type.TEXT)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Response [500]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+            return complexjson.loads(self.text, **kwargs)
+        except JSONDecodeError as e:
+            # Catch JSON-related errors and raise as requests.JSONDecodeError
+            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError
+&gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info10]" time="0.102"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+&gt;           return complexjson.loads(self.text, **kwargs)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:974: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.decoder.JSONDecoder object at 0x0000020DC3BE5610&gt;
+s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type="text/css"&gt;bod...e of the root cause is available in the server logs.&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: JSONDecodeError
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;test_user_permissions.TestUserManager object at 0x0000020DF92B0EC0&gt;
+case_info = {'baseInfo': {'api_name': '查询用户权限', 'description': '测试缺少Authorization头', 'header': {'Content-Type': 'application/json', 'Cookie': '${get_extract_data(cookie_1)}'}, 'method': 'get', ...}, 'testCase': [{'json': {}}]}
+
+    @allure.story(next(c_id) + "查询用户权限（业务场景）")
+    @pytest.mark.run(order=4)
+    @pytest.mark.parametrize('case_info', get_testcase_yaml("./testcase/Business Scenario/user_permissions_data.yaml"))
+    def test_user_permissions(self, case_info):
+        allure.dynamic.title(case_info['testCase'][0]['case_name'])
+&gt;       RequestBase().specification_yaml(case_info)
+
+testcase\Business Scenario\test_user_permissions.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil_business.py:149: in specification_yaml
+    raise e
+base\apiutil_business.py:124: in specification_yaml
+    allure.attach(self.allure_attach_response(res.json()), '接口响应信息', allure.attachment_type.TEXT)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Response [500]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+            return complexjson.loads(self.text, **kwargs)
+        except JSONDecodeError as e:
+            # Catch JSON-related errors and raise as requests.JSONDecodeError
+            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError
+&gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info11]" time="0.119" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info12]" time="0.127" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info13]" time="0.104" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info0]" time="5.933" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info1]" time="0.274" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info2]" time="0.161" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info3]" time="1.970" /></testsuite></testsuites>

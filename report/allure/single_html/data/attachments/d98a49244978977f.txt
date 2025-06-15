@@ -1,0 +1,24 @@
+{
+    "success": true,
+    "state": 1,
+    "message": "响应成功",
+    "content": {
+        "access_token": "22bc1ff6-37e6-4a9f-9908-5ff9f9617882",
+        "user_id": 100030011,
+        "user": {
+            "id": 100030011,
+            "name": "15321919666",
+            "portrait": "https://edu-lagou.oss-cn-beijing.aliyuncs.com/images/2020/06/28/15933251448762927.png",
+            "phone": "15321919666",
+            "password": "123456",
+            "reg_ip": null,
+            "account_non_expired": null,
+            "credentials_non_expired": null,
+            "account_non_locked": null,
+            "status": "DISABLE",
+            "is_del": null,
+            "createTime": 1594347555000,
+            "updateTime": 1594347555000
+        }
+    }
+}

@@ -1,0 +1,14 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：查询用户权限
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://47.113.145.175:8080/ssm_web/user/getUserPermissions
+INFO     common.recordlog:sendrequest.py:144 请求方式：get
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：7.测试过期的Authorization
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '70986608-4296-45fd-8c5d-864c83347444', 'Cookie': 'JSESSIONID=0BE1191FCD9629D06333414C2EE9BA94'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{"success":false,"state":400,"message":"获取失败","content":""}
+INFO     common.recordlog:assertions.py:298 yaml文件预期结果：[{'eq': {'state': 400}}, {'eq': {'success': False}}, {'contains': {'message': '获取失败'}}]
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'state' 预期值: 400, 实际值: 400
+INFO     common.recordlog:assertions.py:109 相等断言成功：JSONPath 'success' 预期值: False, 实际值: False
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【获取失败】,实际结果【获取失败】
+INFO     common.recordlog:assertions.py:326 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

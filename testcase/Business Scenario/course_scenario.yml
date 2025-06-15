@@ -29,7 +29,7 @@
       json:
         {}
       validation:
-        - contains:
+        - eq:
             status_code: 200
 #        - eq: { 'status_code': '200' }
 - baseInfo:
@@ -64,13 +64,12 @@
           "activityCourse": False,
           "activityCourseDTO": { } }
       validation:
-        - contains:
+        - eq:
             status_code: 200
-        - db: "SELECT * FROM course WHERE course_name='新增课程测试6.9'"
-#        - eq: { 'message': '提交订单成功' }
-#      extract:
-#        orderNumber: $.orderNumber
-#        userId: $.userId
+#        - db: "SELECT * FROM course WHERE course_name='新增课程测试6.9'"
+        - eq_db:
+            "SELECT course_name FROM course ORDER BY id DESC LIMIT 1;": "新增课程测试6.9"
+
 - baseInfo:
     api_name: 3修改课程
     url: /ssm_web/course/saveOrUpdateCourse
@@ -103,7 +102,7 @@
           "activityCourse": False,
           "activityCourseDTO": { } }
       validation:
-        - contains:
+        - eq:
             status_code: 200
 - baseInfo:
     api_name: 4更新课程状态（上架/下架）
@@ -119,5 +118,5 @@
         status: 1
         id: 289
       validation:
-        - contains:
+        - eq:
             status_code: 200

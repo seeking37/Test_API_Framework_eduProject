@@ -127,8 +127,9 @@ class RequestBase:
             # replace_load将validation从列表转换成了字符串，所以可以使用replace函数
             test_case['validation'] = val
             # validation = eval(test_case.pop('validation'))  为了断言bool值，json和python的bool大小写不一样，改成下面代码
-            validation = eval((test_case.pop('validation')).replace('true', 'True').replace('false', 'False'))
-
+            # validation = eval((test_case.pop('validation')).replace('true', 'True').replace('false', 'False'))
+            val = test_case.get('validation')
+            test_case.pop('validation')
             # 处理参数提取
             extract = test_case.pop('extract', None)
             extract_list = test_case.pop('extract_list', None)
@@ -161,6 +162,7 @@ class RequestBase:
                     '接口响应信息',
                     allure.attachment_type.TEXT
                 )
+                validation = eval((self.replace_load(val)).replace('true', 'True').replace('false', 'False'))
                 # 处理断言（包含 JSON 数据和状态码）
                 self.asserts.assert_result(validation, res_json, status_code)
 
