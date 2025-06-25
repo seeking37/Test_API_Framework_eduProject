@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="50" time="14.018" timestamp="2025-06-15T15:03:23.709842+08:00" hostname="SQG"><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info0-testcase0]" time="0.222" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info1-testcase1]" time="0.093" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info2-testcase2]" time="0.078" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info3-testcase3]" time="0.104" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info4-testcase4]" time="0.115" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info5-testcase5]" time="0.115" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info0-testcase0]" time="0.121" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info1-testcase1]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info2-testcase2]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info3-testcase3]" time="0.037" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info4-testcase4]" time="0.009" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info5-testcase5]" time="0.009" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info6-testcase6]" time="0.025" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info7-testcase7]" time="0.032" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info8-testcase8]" time="0.019" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info9-testcase9]" time="0.011" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info0-testcase0]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info1-testcase1]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info2-testcase2]" time="0.105" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info3-testcase3]" time="0.108" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info4-testcase4]" time="0.099"><failure message="AssertionError">self = &lt;testcase.Single.UserManagement.test_user_find.TestUserManager object at 0x0000020DF9291B80&gt;
-base_info = {'api_name': '搜索用户', 'header': {'Authorization': '${get_extract_data(authorization)}', 'Content-Type': 'application/json'}, 'method': 'post', 'url': '/ssm_web/user/findAllUserByPage'}
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="77" time="21.266" timestamp="2025-06-25T08:20:25.673835+08:00" hostname="SQG"><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info0-testcase0]" time="0.219" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info1-testcase1]" time="0.090" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info2-testcase2]" time="0.105" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info3-testcase3]" time="0.118" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info4-testcase4]" time="0.113" /><testcase classname="testcase.Single.UserManagement.test_user_login.TestUserManager" name="test_user_login[base_info5-testcase5]" time="0.103" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info0-testcase0]" time="0.264" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info1-testcase1]" time="0.100" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info2-testcase2]" time="0.121" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info3-testcase3]" time="0.013" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info4-testcase4]" time="0.011" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info5-testcase5]" time="0.026" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info6-testcase6]" time="0.020" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info7-testcase7]" time="0.019" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info8-testcase8]" time="0.020" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_find_user[base_info9-testcase9]" time="0.023" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info0-testcase0]" time="0.094" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info1-testcase1]" time="0.116" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info2-testcase2]" time="0.092" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info3-testcase3]" time="0.103" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info4-testcase4]" time="0.117"><failure message="AssertionError">self = &lt;testcase.Single.UserManagement.test_user_find.TestUserManager object at 0x000001C35902E090&gt;
+base_info = {'api_name': '搜索用户', 'header': {'Authorization': '${get_extract_data(token)}', 'Content-Type': 'application/json'}, 'method': 'post', 'url': '/ssm_web/user/findAllUserByPage'}
 testcase = {'json': {'currentPage': 2, 'pageSize': 10, 'username': '15588886234'}}
 
     @allure.story(next(c_id) + "搜索用户")
@@ -9,15 +9,15 @@ testcase = {'json': {'currentPage': 2, 'pageSize': 10, 'username': '15588886234'
         allure.dynamic.title(testcase['case_name'])
 &gt;       RequestBase().specification_yaml(base_info, testcase)
 
-testcase\Single\UserManagement\test_user_find.py:28: 
+testcase\Single\UserManagement\test_user_find.py:30: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-base\apiutil.py:188: in specification_yaml
+base\apiutil.py:193: in specification_yaml
     raise e
-base\apiutil.py:167: in specification_yaml
+base\apiutil.py:172: in specification_yaml
     self.asserts.assert_result(validation, res_json, status_code)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-self = &lt;common.assertions.Assertions object at 0x0000020DF748BEF0&gt;
+self = &lt;common.assertions.Assertions object at 0x000001C35927CE60&gt;
 expected = [{'contains': {'message': '响应成功'}}, {'eq': {'status_code': 200}}, {'eq': {'success': True}}, {'eq': {'content.pageNum': 2}}, {'eq': {'content.pageSize': 10}}, {'eq': {'content.isFirstPage': False}}, ...]
 response = {'content': {'endRow': 0, 'firstPage': 1, 'hasNextPage': False, 'hasPreviousPage': True, ...}, 'message': '响应成功', 'state': 200, 'success': True}
 status_code = 200
@@ -43,11 +43,8 @@ status_code = 200
                     elif key == "eq":
                         flag = self.equal_assert(value, response, status_code)
                         all_flag = all_flag + flag
-                    elif key == 'ne':
+                    elif key == 'neq':
                         flag = self.not_equal_assert(value, response, status_code)
-                        all_flag = all_flag + flag
-                    elif key == 'rv':
-                        flag = self.assert_response_any(actual_results=response, expected_results=value)
                         all_flag = all_flag + flag
                     elif key == 'eq_db':
                         flag = self.equal_mysql_assert(value)
@@ -67,7 +64,7 @@ status_code = 200
 &gt;           assert False
 E           AssertionError
 
-common\assertions.py:330: AssertionError</failure></testcase><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info5-testcase5]" time="0.113" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info6-testcase6]" time="0.031" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info7-testcase7]" time="0.010" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info8-testcase8]" time="0.025" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info9-testcase9]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info10-testcase10]" time="0.010" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info11-testcase11]" time="0.030" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info12-testcase12]" time="0.036" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info13-testcase13]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info14-testcase14]" time="0.037" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info15-testcase15]" time="0.036" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info0]" time="0.121" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info1]" time="0.806" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info2]" time="0.131" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info3]" time="0.261" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info4]" time="0.117" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info5]" time="0.209" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info6]" time="0.116" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info7]" time="0.283" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info8]" time="0.103" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info9]" time="0.100"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
+common\assertions.py:326: AssertionError</failure></testcase><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info5-testcase5]" time="0.102" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info6-testcase6]" time="0.025" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info7-testcase7]" time="0.021" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info8-testcase8]" time="0.020" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info9-testcase9]" time="0.021" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info10-testcase10]" time="0.013" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info11-testcase11]" time="0.027" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info12-testcase12]" time="0.034" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info13-testcase13]" time="0.042" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info14-testcase14]" time="0.028" /><testcase classname="testcase.Single.UserManagement.test_user_find.TestUserManager" name="test_search_user[base_info15-testcase15]" time="0.040" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info0]" time="0.098" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info1]" time="0.740" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info2]" time="0.109" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info3]" time="0.240" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info4]" time="0.104" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info5]" time="0.214" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info6]" time="0.107" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info7]" time="0.235" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info8]" time="0.102" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info9]" time="0.158"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
 
     def json(self, **kwargs):
         r"""Returns the json-encoded content of a response, if any.
@@ -106,7 +103,7 @@ C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: 
     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-self = &lt;json.decoder.JSONDecoder object at 0x0000020DC3BE5610&gt;
+self = &lt;json.decoder.JSONDecoder object at 0x000001C323AB5790&gt;
 s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type="text/css"&gt;bod...e of the root cause is available in the server logs.&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
 idx = 0
 
@@ -129,7 +126,7 @@ C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: 
 
 During handling of the above exception, another exception occurred:
 
-self = &lt;test_user_permissions.TestUserManager object at 0x0000020DF92B14C0&gt;
+self = &lt;test_user_permissions.TestUserManager object at 0x000001C359039130&gt;
 case_info = {'baseInfo': {'api_name': '查询用户权限', 'header': {'Authorization': '${get_extract_data(token_null)}', 'Content-Type': 'ap..._extract_data(cookie_null)}'}, 'method': 'get', 'url': '/ssm_web/user/getUserPermissions'}, 'testCase': [{'json': {}}]}
 
     @allure.story(next(c_id) + "查询用户权限（业务场景）")
@@ -139,7 +136,7 @@ case_info = {'baseInfo': {'api_name': '查询用户权限', 'header': {'Authoriz
         allure.dynamic.title(case_info['testCase'][0]['case_name'])
 &gt;       RequestBase().specification_yaml(case_info)
 
-testcase\Business Scenario\test_user_permissions.py:17: 
+testcase\Business Scenario\test_user_permissions.py:19: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 base\apiutil_business.py:149: in specification_yaml
     raise e
@@ -183,7 +180,7 @@ self = &lt;Response [500]&gt;, kwargs = {}
 &gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
 E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
-..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info10]" time="0.102"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info10]" time="0.103"><failure message="requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">self = &lt;Response [500]&gt;, kwargs = {}
 
     def json(self, **kwargs):
         r"""Returns the json-encoded content of a response, if any.
@@ -222,7 +219,7 @@ C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: 
     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-self = &lt;json.decoder.JSONDecoder object at 0x0000020DC3BE5610&gt;
+self = &lt;json.decoder.JSONDecoder object at 0x000001C323AB5790&gt;
 s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type="text/css"&gt;bod...e of the root cause is available in the server logs.&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
 idx = 0
 
@@ -245,7 +242,7 @@ C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: 
 
 During handling of the above exception, another exception occurred:
 
-self = &lt;test_user_permissions.TestUserManager object at 0x0000020DF92B0EC0&gt;
+self = &lt;test_user_permissions.TestUserManager object at 0x000001C359038DA0&gt;
 case_info = {'baseInfo': {'api_name': '查询用户权限', 'description': '测试缺少Authorization头', 'header': {'Content-Type': 'application/json', 'Cookie': '${get_extract_data(cookie_1)}'}, 'method': 'get', ...}, 'testCase': [{'json': {}}]}
 
     @allure.story(next(c_id) + "查询用户权限（业务场景）")
@@ -255,7 +252,7 @@ case_info = {'baseInfo': {'api_name': '查询用户权限', 'description': '测�
         allure.dynamic.title(case_info['testCase'][0]['case_name'])
 &gt;       RequestBase().specification_yaml(case_info)
 
-testcase\Business Scenario\test_user_permissions.py:17: 
+testcase\Business Scenario\test_user_permissions.py:19: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 base\apiutil_business.py:149: in specification_yaml
     raise e
@@ -299,4 +296,626 @@ self = &lt;Response [500]&gt;, kwargs = {}
 &gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
 E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
-..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info11]" time="0.119" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info12]" time="0.127" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info13]" time="0.104" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info0]" time="5.933" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info1]" time="0.274" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info2]" time="0.161" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info3]" time="1.970" /></testsuite></testsuites>
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError</failure></testcase><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info11]" time="0.105" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info12]" time="0.151" /><testcase classname="testcase.Business Scenario.test_user_permissions.TestUserManager" name="test_user_permissions[case_info13]" time="0.093" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info0]" time="5.025" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info1]" time="0.282" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info2]" time="0.127" /><testcase classname="testcase.Business Scenario.test_course_scenario.TestEBusinessScenario" name="test_course_scenario[case_info3]" time="1.665" /><testcase classname="testcase.Single.CourseManagement.test_course_findall.TestCourseManagement" name="test_course_findall[base_info0-testcase0]" time="0.161" /><testcase classname="testcase.Single.CourseManagement.test_course_findbyid.TestCourseFindById" name="test_course_findbyid[base_info0-testcase0]" time="0.094" /><testcase classname="testcase.Single.CourseManagement.test_course_findbyid.TestCourseFindById" name="test_course_findbyid[base_info1-testcase1]" time="0.136" /><testcase classname="testcase.Single.CourseManagement.test_course_findbyid.TestCourseFindById" name="test_course_findbyid[base_info2-testcase2]" time="0.114"><failure message="UnboundLocalError: cannot access local variable 'validation' where it is not associated with a value">self = &lt;Response [400]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+&gt;           return complexjson.loads(self.text, **kwargs)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:974: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.decoder.JSONDecoder object at 0x000001C323AB5790&gt;
+s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 – Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-fa...uest message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: JSONDecodeError
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;base.apiutil.RequestBase object at 0x000001C35916AFF0&gt;
+base_info = {'api_name': '根据课程ID查询课程', 'header': {'Authorization': '${get_extract_data(token)}', 'Cookie': '${get_extract_data(cookie)}'}, 'method': 'GET', 'url': '/ssm_web/courseContent/findCourseByCourseId'}
+test_case = {'params': {}}
+
+    def specification_yaml(self, base_info, test_case):
+        """
+        接口请求处理基本方法
+        核心枢纽：将 YAML 中的 baseInfo 和 testCase 组合成可执行的测试步骤。
+        流程控制：依次处理参数、发送请求(run_main，send_request)、提取数据、执行断言，是类的主入口方法。
+        :param base_info: yaml文件里面的baseInfo
+        :param test_case: yaml文件里面的testCase
+        :return:
+        """
+        try:
+            params_type = ['data', 'json', 'params']
+            # 根据接口配置选择host
+            url_host = self.get_host(base_info, test_case)
+            test_case.pop('use_mock', None)
+            base_info.pop('use_mock', None)
+            api_name = base_info['api_name']
+            allure.attach(api_name, f'接口名称：{api_name}', allure.attachment_type.TEXT)
+            url = url_host + base_info['url']
+            allure.attach(api_name, f'接口地址：{url}', allure.attachment_type.TEXT)
+            method = base_info['method']
+            allure.attach(api_name, f'请求方法：{method}', allure.attachment_type.TEXT)
+            # 处理请求头：支持testCase级别完全覆盖baseInfo的header
+            if 'header' in test_case:
+                # 如果testCase中有header，则完全使用testCase的header
+                header = self.replace_load(test_case.pop('header'))
+            elif 'header' in base_info:
+                # 否则使用baseInfo中的header
+                header = self.replace_load(base_info['header'])
+            else:
+                header = {}
+    
+            allure.attach(api_name, f'请求头：{header}', allure.attachment_type.TEXT)
+            # 处理cookie
+            cookie = None
+            if base_info.get('cookies') is not None:
+                cookie = eval(self.replace_load(base_info['cookies']))
+            # pop：字典 删除case_name键值对并返回case_name的值
+            case_name = test_case.pop('case_name')
+            allure.attach(api_name, f'测试用例名称：{case_name}', allure.attachment_type.TEXT)
+            # 处理断言
+            val = self.replace_load(test_case.get('validation'))
+            # replace_load将validation从列表转换成了字符串，所以可以使用replace函数
+            test_case['validation'] = val
+            # validation = eval(test_case.pop('validation'))  为了断言bool值，json和python的bool大小写不一样，改成下面代码
+            # validation = eval((test_case.pop('validation')).replace('true', 'True').replace('false', 'False'))
+            val = test_case.get('validation')
+            test_case.pop('validation')
+            # 处理参数提取
+            extract = test_case.pop('extract', None)
+            extract_list = test_case.pop('extract_list', None)
+            # 处理接口的请求参数
+            for key, value in test_case.items():
+                if key in params_type:
+                    test_case[key] = self.replace_load(value)
+    
+            # 处理文件上传接口
+            file, files = test_case.pop('files', None), None
+            if file is not None:
+                for fk, fv in file.items():
+                    allure.attach(json.dumps(file), '导入文件')
+                    files = {fk: open(fv, mode='rb')}
+            # run_main ：核心是发送请求。  传入的参数包含有base_info，和test_case中的'data:{xxx}'
+            res = self.run.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
+                                    file=files, cookies=cookie, **test_case)
+            if extract is not None:  # extract : {'token': '$.token'}
+                self.extract_data(extract, res)
+            if extract_list is not None:
+                self.extract_data_list(extract_list, res.text)
+    
+            status_code = res.status_code
+            # 无论 Content-Type 是什么，直接尝试解析 JSON
+            try:
+&gt;               res_json = res.json()  # 强制尝试解析响应内容
+
+base\apiutil.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Response [400]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+            return complexjson.loads(self.text, **kwargs)
+        except JSONDecodeError as e:
+            # Catch JSON-related errors and raise as requests.JSONDecodeError
+            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError
+&gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;testcase.Single.CourseManagement.test_course_findbyid.TestCourseFindById object at 0x000001C35903ACC0&gt;
+base_info = {'api_name': '根据课程ID查询课程', 'header': {'Authorization': '${get_extract_data(token)}', 'Cookie': '${get_extract_data(cookie)}'}, 'method': 'GET', 'url': '/ssm_web/courseContent/findCourseByCourseId'}
+testcase = {'params': {}}
+
+    @allure.story(next(c_id) + "根据课程ID查询课程")
+    @pytest.mark.run(order=11)
+    @pytest.mark.parametrize('base_info,testcase', get_testcase_yaml("./testcase/Single/CourseManagement/course_findbyid_data.yaml"))
+    def test_course_findbyid(self, base_info, testcase):
+        """
+        测试根据课程ID查询课程接口
+        验证通过课程ID获取特定课程信息的功能，包括有效ID、无效ID和权限验证
+        """
+        allure.dynamic.title(testcase['case_name'])
+        logs.info(f"开始执行测试用例: {testcase['case_name']}")
+&gt;       RequestBase().specification_yaml(base_info, testcase)
+
+testcase\Single\CourseManagement\test_course_findbyid.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:193: in specification_yaml
+    raise e
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;base.apiutil.RequestBase object at 0x000001C35916AFF0&gt;
+base_info = {'api_name': '根据课程ID查询课程', 'header': {'Authorization': '${get_extract_data(token)}', 'Cookie': '${get_extract_data(cookie)}'}, 'method': 'GET', 'url': '/ssm_web/courseContent/findCourseByCourseId'}
+test_case = {'params': {}}
+
+    def specification_yaml(self, base_info, test_case):
+        """
+        接口请求处理基本方法
+        核心枢纽：将 YAML 中的 baseInfo 和 testCase 组合成可执行的测试步骤。
+        流程控制：依次处理参数、发送请求(run_main，send_request)、提取数据、执行断言，是类的主入口方法。
+        :param base_info: yaml文件里面的baseInfo
+        :param test_case: yaml文件里面的testCase
+        :return:
+        """
+        try:
+            params_type = ['data', 'json', 'params']
+            # 根据接口配置选择host
+            url_host = self.get_host(base_info, test_case)
+            test_case.pop('use_mock', None)
+            base_info.pop('use_mock', None)
+            api_name = base_info['api_name']
+            allure.attach(api_name, f'接口名称：{api_name}', allure.attachment_type.TEXT)
+            url = url_host + base_info['url']
+            allure.attach(api_name, f'接口地址：{url}', allure.attachment_type.TEXT)
+            method = base_info['method']
+            allure.attach(api_name, f'请求方法：{method}', allure.attachment_type.TEXT)
+            # 处理请求头：支持testCase级别完全覆盖baseInfo的header
+            if 'header' in test_case:
+                # 如果testCase中有header，则完全使用testCase的header
+                header = self.replace_load(test_case.pop('header'))
+            elif 'header' in base_info:
+                # 否则使用baseInfo中的header
+                header = self.replace_load(base_info['header'])
+            else:
+                header = {}
+    
+            allure.attach(api_name, f'请求头：{header}', allure.attachment_type.TEXT)
+            # 处理cookie
+            cookie = None
+            if base_info.get('cookies') is not None:
+                cookie = eval(self.replace_load(base_info['cookies']))
+            # pop：字典 删除case_name键值对并返回case_name的值
+            case_name = test_case.pop('case_name')
+            allure.attach(api_name, f'测试用例名称：{case_name}', allure.attachment_type.TEXT)
+            # 处理断言
+            val = self.replace_load(test_case.get('validation'))
+            # replace_load将validation从列表转换成了字符串，所以可以使用replace函数
+            test_case['validation'] = val
+            # validation = eval(test_case.pop('validation'))  为了断言bool值，json和python的bool大小写不一样，改成下面代码
+            # validation = eval((test_case.pop('validation')).replace('true', 'True').replace('false', 'False'))
+            val = test_case.get('validation')
+            test_case.pop('validation')
+            # 处理参数提取
+            extract = test_case.pop('extract', None)
+            extract_list = test_case.pop('extract_list', None)
+            # 处理接口的请求参数
+            for key, value in test_case.items():
+                if key in params_type:
+                    test_case[key] = self.replace_load(value)
+    
+            # 处理文件上传接口
+            file, files = test_case.pop('files', None), None
+            if file is not None:
+                for fk, fv in file.items():
+                    allure.attach(json.dumps(file), '导入文件')
+                    files = {fk: open(fv, mode='rb')}
+            # run_main ：核心是发送请求。  传入的参数包含有base_info，和test_case中的'data:{xxx}'
+            res = self.run.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
+                                    file=files, cookies=cookie, **test_case)
+            if extract is not None:  # extract : {'token': '$.token'}
+                self.extract_data(extract, res)
+            if extract_list is not None:
+                self.extract_data_list(extract_list, res.text)
+    
+            status_code = res.status_code
+            # 无论 Content-Type 是什么，直接尝试解析 JSON
+            try:
+                res_json = res.json()  # 强制尝试解析响应内容
+                # 附加 JSON 响应到报告
+                allure.attach(
+                    self.allure_attach_response(res_json),
+                    '接口响应信息',
+                    allure.attachment_type.TEXT
+                )
+                validation = eval((self.replace_load(val)).replace('true', 'True').replace('false', 'False'))
+                # 处理断言（包含 JSON 数据和状态码）
+                self.asserts.assert_result(validation, res_json, status_code)
+    
+            except (JSONDecodeError, ValueError) as e:  # 捕获 JSON 解析异常
+                # 记录错误日志（明确提示内容非JSON）
+                logs.error(f'响应非JSON格式，解析失败: {e}，原始内容: {res.text[:200]}...')
+    
+                # 附加原始响应内容到报告（确保非JSON也能展示）
+                allure.attach(
+                    res.text if res.text else res.content.decode('utf-8', errors='ignore'),
+                    '接口响应原始内容',
+                    allure.attachment_type.TEXT
+                )
+    
+                # 仅验证状态码（根据业务需求，可扩展其他非JSON断言。比如验证码接口返回的是图片）
+                self.asserts.assert_result(
+&gt;                   validation,
+                    {'status_code': status_code},  # 构造仅包含状态码的模拟数据
+                    status_code
+                )
+E               UnboundLocalError: cannot access local variable 'validation' where it is not associated with a value
+
+base\apiutil.py:187: UnboundLocalError</failure></testcase><testcase classname="testcase.Single.CourseManagement.test_course_findbyid.TestCourseFindById" name="test_course_findbyid[base_info3-testcase3]" time="0.094"><failure message="UnboundLocalError: cannot access local variable 'validation' where it is not associated with a value">self = &lt;Response [400]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+&gt;           return complexjson.loads(self.text, **kwargs)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:974: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.decoder.JSONDecoder object at 0x000001C323AB5790&gt;
+s = '&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 – Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-fa...uest message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/8.5.63&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\seeki\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py:355: JSONDecodeError
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;base.apiutil.RequestBase object at 0x000001C3591E4350&gt;
+base_info = {'api_name': '根据课程ID查询课程', 'header': {'Authorization': '${get_extract_data(token)}', 'Cookie': '${get_extract_data(cookie)}'}, 'method': 'GET', 'url': '/ssm_web/courseContent/findCourseByCourseId'}
+test_case = {'params': {'courseId': 'invalid_id'}}
+
+    def specification_yaml(self, base_info, test_case):
+        """
+        接口请求处理基本方法
+        核心枢纽：将 YAML 中的 baseInfo 和 testCase 组合成可执行的测试步骤。
+        流程控制：依次处理参数、发送请求(run_main，send_request)、提取数据、执行断言，是类的主入口方法。
+        :param base_info: yaml文件里面的baseInfo
+        :param test_case: yaml文件里面的testCase
+        :return:
+        """
+        try:
+            params_type = ['data', 'json', 'params']
+            # 根据接口配置选择host
+            url_host = self.get_host(base_info, test_case)
+            test_case.pop('use_mock', None)
+            base_info.pop('use_mock', None)
+            api_name = base_info['api_name']
+            allure.attach(api_name, f'接口名称：{api_name}', allure.attachment_type.TEXT)
+            url = url_host + base_info['url']
+            allure.attach(api_name, f'接口地址：{url}', allure.attachment_type.TEXT)
+            method = base_info['method']
+            allure.attach(api_name, f'请求方法：{method}', allure.attachment_type.TEXT)
+            # 处理请求头：支持testCase级别完全覆盖baseInfo的header
+            if 'header' in test_case:
+                # 如果testCase中有header，则完全使用testCase的header
+                header = self.replace_load(test_case.pop('header'))
+            elif 'header' in base_info:
+                # 否则使用baseInfo中的header
+                header = self.replace_load(base_info['header'])
+            else:
+                header = {}
+    
+            allure.attach(api_name, f'请求头：{header}', allure.attachment_type.TEXT)
+            # 处理cookie
+            cookie = None
+            if base_info.get('cookies') is not None:
+                cookie = eval(self.replace_load(base_info['cookies']))
+            # pop：字典 删除case_name键值对并返回case_name的值
+            case_name = test_case.pop('case_name')
+            allure.attach(api_name, f'测试用例名称：{case_name}', allure.attachment_type.TEXT)
+            # 处理断言
+            val = self.replace_load(test_case.get('validation'))
+            # replace_load将validation从列表转换成了字符串，所以可以使用replace函数
+            test_case['validation'] = val
+            # validation = eval(test_case.pop('validation'))  为了断言bool值，json和python的bool大小写不一样，改成下面代码
+            # validation = eval((test_case.pop('validation')).replace('true', 'True').replace('false', 'False'))
+            val = test_case.get('validation')
+            test_case.pop('validation')
+            # 处理参数提取
+            extract = test_case.pop('extract', None)
+            extract_list = test_case.pop('extract_list', None)
+            # 处理接口的请求参数
+            for key, value in test_case.items():
+                if key in params_type:
+                    test_case[key] = self.replace_load(value)
+    
+            # 处理文件上传接口
+            file, files = test_case.pop('files', None), None
+            if file is not None:
+                for fk, fv in file.items():
+                    allure.attach(json.dumps(file), '导入文件')
+                    files = {fk: open(fv, mode='rb')}
+            # run_main ：核心是发送请求。  传入的参数包含有base_info，和test_case中的'data:{xxx}'
+            res = self.run.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
+                                    file=files, cookies=cookie, **test_case)
+            if extract is not None:  # extract : {'token': '$.token'}
+                self.extract_data(extract, res)
+            if extract_list is not None:
+                self.extract_data_list(extract_list, res.text)
+    
+            status_code = res.status_code
+            # 无论 Content-Type 是什么，直接尝试解析 JSON
+            try:
+&gt;               res_json = res.json()  # 强制尝试解析响应内容
+
+base\apiutil.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Response [400]&gt;, kwargs = {}
+
+    def json(self, **kwargs):
+        r"""Returns the json-encoded content of a response, if any.
+    
+        :param \*\*kwargs: Optional arguments that ``json.loads`` takes.
+        :raises requests.exceptions.JSONDecodeError: If the response body does not
+            contain valid json.
+        """
+    
+        if not self.encoding and self.content and len(self.content) &gt; 3:
+            # No encoding set. JSON RFC 4627 section 3 states we should expect
+            # UTF-8, -16 or -32. Detect which one to use; If the detection or
+            # decoding fails, fall back to `self.text` (using charset_normalizer to make
+            # a best guess).
+            encoding = guess_json_utf(self.content)
+            if encoding is not None:
+                try:
+                    return complexjson.loads(self.content.decode(encoding), **kwargs)
+                except UnicodeDecodeError:
+                    # Wrong UTF codec detected; usually because it's not UTF-8
+                    # but some other 8-bit codec.  This is an RFC violation,
+                    # and the server didn't bother to tell us what codec *was*
+                    # used.
+                    pass
+                except JSONDecodeError as e:
+                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+    
+        try:
+            return complexjson.loads(self.text, **kwargs)
+        except JSONDecodeError as e:
+            # Catch JSON-related errors and raise as requests.JSONDecodeError
+            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError
+&gt;           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+E           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+..\..\Pyproject\testProject\venv\Lib\site-packages\requests\models.py:978: JSONDecodeError
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;testcase.Single.CourseManagement.test_course_findbyid.TestCourseFindById object at 0x000001C35903A1B0&gt;
+base_info = {'api_name': '根据课程ID查询课程', 'header': {'Authorization': '${get_extract_data(token)}', 'Cookie': '${get_extract_data(cookie)}'}, 'method': 'GET', 'url': '/ssm_web/courseContent/findCourseByCourseId'}
+testcase = {'params': {'courseId': 'invalid_id'}}
+
+    @allure.story(next(c_id) + "根据课程ID查询课程")
+    @pytest.mark.run(order=11)
+    @pytest.mark.parametrize('base_info,testcase', get_testcase_yaml("./testcase/Single/CourseManagement/course_findbyid_data.yaml"))
+    def test_course_findbyid(self, base_info, testcase):
+        """
+        测试根据课程ID查询课程接口
+        验证通过课程ID获取特定课程信息的功能，包括有效ID、无效ID和权限验证
+        """
+        allure.dynamic.title(testcase['case_name'])
+        logs.info(f"开始执行测试用例: {testcase['case_name']}")
+&gt;       RequestBase().specification_yaml(base_info, testcase)
+
+testcase\Single\CourseManagement\test_course_findbyid.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+base\apiutil.py:193: in specification_yaml
+    raise e
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;base.apiutil.RequestBase object at 0x000001C3591E4350&gt;
+base_info = {'api_name': '根据课程ID查询课程', 'header': {'Authorization': '${get_extract_data(token)}', 'Cookie': '${get_extract_data(cookie)}'}, 'method': 'GET', 'url': '/ssm_web/courseContent/findCourseByCourseId'}
+test_case = {'params': {'courseId': 'invalid_id'}}
+
+    def specification_yaml(self, base_info, test_case):
+        """
+        接口请求处理基本方法
+        核心枢纽：将 YAML 中的 baseInfo 和 testCase 组合成可执行的测试步骤。
+        流程控制：依次处理参数、发送请求(run_main，send_request)、提取数据、执行断言，是类的主入口方法。
+        :param base_info: yaml文件里面的baseInfo
+        :param test_case: yaml文件里面的testCase
+        :return:
+        """
+        try:
+            params_type = ['data', 'json', 'params']
+            # 根据接口配置选择host
+            url_host = self.get_host(base_info, test_case)
+            test_case.pop('use_mock', None)
+            base_info.pop('use_mock', None)
+            api_name = base_info['api_name']
+            allure.attach(api_name, f'接口名称：{api_name}', allure.attachment_type.TEXT)
+            url = url_host + base_info['url']
+            allure.attach(api_name, f'接口地址：{url}', allure.attachment_type.TEXT)
+            method = base_info['method']
+            allure.attach(api_name, f'请求方法：{method}', allure.attachment_type.TEXT)
+            # 处理请求头：支持testCase级别完全覆盖baseInfo的header
+            if 'header' in test_case:
+                # 如果testCase中有header，则完全使用testCase的header
+                header = self.replace_load(test_case.pop('header'))
+            elif 'header' in base_info:
+                # 否则使用baseInfo中的header
+                header = self.replace_load(base_info['header'])
+            else:
+                header = {}
+    
+            allure.attach(api_name, f'请求头：{header}', allure.attachment_type.TEXT)
+            # 处理cookie
+            cookie = None
+            if base_info.get('cookies') is not None:
+                cookie = eval(self.replace_load(base_info['cookies']))
+            # pop：字典 删除case_name键值对并返回case_name的值
+            case_name = test_case.pop('case_name')
+            allure.attach(api_name, f'测试用例名称：{case_name}', allure.attachment_type.TEXT)
+            # 处理断言
+            val = self.replace_load(test_case.get('validation'))
+            # replace_load将validation从列表转换成了字符串，所以可以使用replace函数
+            test_case['validation'] = val
+            # validation = eval(test_case.pop('validation'))  为了断言bool值，json和python的bool大小写不一样，改成下面代码
+            # validation = eval((test_case.pop('validation')).replace('true', 'True').replace('false', 'False'))
+            val = test_case.get('validation')
+            test_case.pop('validation')
+            # 处理参数提取
+            extract = test_case.pop('extract', None)
+            extract_list = test_case.pop('extract_list', None)
+            # 处理接口的请求参数
+            for key, value in test_case.items():
+                if key in params_type:
+                    test_case[key] = self.replace_load(value)
+    
+            # 处理文件上传接口
+            file, files = test_case.pop('files', None), None
+            if file is not None:
+                for fk, fv in file.items():
+                    allure.attach(json.dumps(file), '导入文件')
+                    files = {fk: open(fv, mode='rb')}
+            # run_main ：核心是发送请求。  传入的参数包含有base_info，和test_case中的'data:{xxx}'
+            res = self.run.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
+                                    file=files, cookies=cookie, **test_case)
+            if extract is not None:  # extract : {'token': '$.token'}
+                self.extract_data(extract, res)
+            if extract_list is not None:
+                self.extract_data_list(extract_list, res.text)
+    
+            status_code = res.status_code
+            # 无论 Content-Type 是什么，直接尝试解析 JSON
+            try:
+                res_json = res.json()  # 强制尝试解析响应内容
+                # 附加 JSON 响应到报告
+                allure.attach(
+                    self.allure_attach_response(res_json),
+                    '接口响应信息',
+                    allure.attachment_type.TEXT
+                )
+                validation = eval((self.replace_load(val)).replace('true', 'True').replace('false', 'False'))
+                # 处理断言（包含 JSON 数据和状态码）
+                self.asserts.assert_result(validation, res_json, status_code)
+    
+            except (JSONDecodeError, ValueError) as e:  # 捕获 JSON 解析异常
+                # 记录错误日志（明确提示内容非JSON）
+                logs.error(f'响应非JSON格式，解析失败: {e}，原始内容: {res.text[:200]}...')
+    
+                # 附加原始响应内容到报告（确保非JSON也能展示）
+                allure.attach(
+                    res.text if res.text else res.content.decode('utf-8', errors='ignore'),
+                    '接口响应原始内容',
+                    allure.attachment_type.TEXT
+                )
+    
+                # 仅验证状态码（根据业务需求，可扩展其他非JSON断言。比如验证码接口返回的是图片）
+                self.asserts.assert_result(
+&gt;                   validation,
+                    {'status_code': status_code},  # 构造仅包含状态码的模拟数据
+                    status_code
+                )
+E               UnboundLocalError: cannot access local variable 'validation' where it is not associated with a value
+
+base\apiutil.py:187: UnboundLocalError</failure></testcase><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info0-testcase0]" time="5.086" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info1-testcase1]" time="0.051" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info2-testcase2]" time="0.035" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info3-testcase3]" time="0.021" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info4-testcase4]" time="0.021" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info5-testcase5]" time="0.016" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info6-testcase6]" time="0.034" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info7-testcase7]" time="0.037" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info8-testcase8]" time="0.017" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info9-testcase9]" time="0.023" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_add[base_info10-testcase10]" time="0.019" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info0-testcase0]" time="0.121" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info1-testcase1]" time="0.137" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info2-testcase2]" time="0.036" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info3-testcase3]" time="0.037" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info4-testcase4]" time="0.036" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info5-testcase5]" time="0.025" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info6-testcase6]" time="0.019" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info7-testcase7]" time="0.044" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info8-testcase8]" time="0.025" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info9-testcase9]" time="0.044" /><testcase classname="testcase.Single.CourseManagement.test_course_save.TestCourseSave" name="test_course_update[base_info10-testcase10]" time="1.600" /></testsuite></testsuites>

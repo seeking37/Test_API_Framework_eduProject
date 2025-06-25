@@ -65,5 +65,5 @@ if __name__ == '__main__':
     # api_info = get_testcase_yaml('../data/loginName.yml')
     # print(api_info[0][0],"\n",api_info[0][1])
     # RequestBase().specification_yaml(api_info[0][0], api_info[0][1])
-    system_login()
-
+    # system_login()
+    pass

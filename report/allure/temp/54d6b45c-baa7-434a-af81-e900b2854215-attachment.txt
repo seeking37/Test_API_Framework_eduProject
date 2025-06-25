@@ -1,0 +1,21 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+ERROR    common.recordlog:readyaml.py:115 【extract.yaml】没有找到：new_course_id,--'new_course_id'
+ERROR    common.recordlog:readyaml.py:115 【extract.yaml】没有找到：new_course_id,--'new_course_id'
+INFO     common.recordlog:sendrequest.py:142 接口名称：修改课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://127.0.0.1:8787/ssm_web/course/saveOrUpdateCourse
+INFO     common.recordlog:sendrequest.py:144 请求方式：POST
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：修改课程缺少Authorization头
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': '测试简介', 'courseName': '测试课程', 'previewFirstField': '测试预览', 'id': 'None'}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{
+  "message": "\u7f3a\u5c11Authorization\u5934",
+  "state": 401,
+  "success": false
+}
+
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'success': False}}, {'eq': {'state': 401}}, {'contains': {'message': '缺少Authorization头'}}]
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'success' 预期值: False, 实际值: False
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'state' 预期值: 401, 实际值: 401
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【缺少Authorization头】,实际结果【缺少Authorization头】
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

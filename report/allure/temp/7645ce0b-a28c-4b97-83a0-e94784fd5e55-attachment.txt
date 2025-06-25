@@ -1,0 +1,5 @@
+{
+    "message": "课程ID格式错误",
+    "state": 400,
+    "success": false
+}

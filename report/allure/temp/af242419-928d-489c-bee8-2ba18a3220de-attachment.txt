@@ -1,0 +1,19 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：新增课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://127.0.0.1:8787/ssm_web/course/saveOrUpdateCourse
+INFO     common.recordlog:sendrequest.py:144 请求方式：POST
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：新增课程缺少必填字段courseName
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': '测试课程简介', 'courseName': '', 'previewFirstField': '测试预览'}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{
+  "message": "\u7f3a\u5c11\u5fc5\u586b\u53c2\u6570\uff1acourseName",
+  "state": 400,
+  "success": false
+}
+
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'success': False}}, {'eq': {'state': 400}}, {'contains': {'message': '缺少必填参数：courseName'}}]
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'success' 预期值: False, 实际值: False
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'state' 预期值: 400, 实际值: 400
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【缺少必填参数：courseName】,实际结果【缺少必填参数：courseName】
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

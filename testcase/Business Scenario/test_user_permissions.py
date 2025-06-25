@@ -6,7 +6,9 @@ from base.apiutil_business import RequestBase
 from base.generateId import m_id, c_id
 
 
-@allure.feature(next(m_id) + '用户管理')
+@allure.feature(next(m_id) + '用户管理（业务场景）')
+@pytest.mark.user_management
+@pytest.mark.api_scenario
 class TestUserManager:
 
     @allure.story(next(c_id) + "查询用户权限（业务场景）")

@@ -270,6 +270,164 @@ def find_all_users():
     return jsonify(response)
 
 
+@api.route('/ssm_web/course/saveOrUpdateCourse', methods=['post'])
+def save_or_update_course():
+    """新增/修改课程接口"""
+    # 验证Authorization头
+    auth_header = request.headers.get('Authorization')
+    if not auth_header:
+        return jsonify({
+            'message': '缺少Authorization头',
+            'success': False,
+            'state': 401
+        }), 401
+    
+    # 验证Authorization格式（简单验证）
+    if auth_header == 'Bearer invalid_token_12345':
+        return jsonify({
+            'message': '无效的Authorization令牌',
+            'success': False,
+            'state': 401
+        }), 401
+    
+    # 验证Content-Type
+    content_type = request.headers.get('Content-Type', '')
+    if not content_type.startswith('application/json'):
+        return jsonify({
+            'message': 'Content-Type必须为application/json',
+            'success': False,
+            'state': 400
+        }), 400
+    
+    # 获取请求参数
+    request_data = request.get_json()
+    
+    # 验证请求体不能为空
+    if not request_data:
+        return jsonify({
+            'message': '请求参数不能为空',
+            'success': False,
+            'state': 400
+        }), 400
+    
+    # 验证必填参数
+    required_fields = ['brief', 'courseName', 'previewFirstField']
+    for field in required_fields:
+        if not request_data.get(field):
+            return jsonify({
+                'message': f'缺少必填参数：{field}',
+                'success': False,
+                'state': 400
+            }), 400
+    
+    # 验证课程名称长度
+    course_name = request_data.get('courseName')
+    if len(course_name) > 50:
+        return jsonify({
+            'message': '课程名称长度不能超过50个字符',
+            'success': False,
+            'state': 400
+        }), 400
+    
+    # 验证价格格式
+    price = request_data.get('price')
+    if price is not None:
+        try:
+            price_float = float(price)
+            if price_float < 0:
+                return jsonify({
+                    'message': '价格不能为负数',
+                    'success': False,
+                    'state': 400
+                }), 400
+        except (ValueError, TypeError):
+            return jsonify({
+                'message': '价格格式错误',
+                'success': False,
+                'state': 400
+            }), 400
+    
+    # 判断是新增还是修改
+    course_id = request_data.get('id')
+    is_update = course_id and course_id.strip()
+    
+    if is_update:
+        # 修改课程逻辑
+        try:
+            course_id_int = int(course_id)
+        except (ValueError, TypeError):
+            return jsonify({
+                'message': '课程ID格式错误',
+                'success': False,
+                'state': 400
+            }), 400
+        
+        # 模拟检查课程是否存在
+        if course_id_int == 999999:
+            return jsonify({
+                'message': '课程不存在',
+                'success': False,
+                'state': 404
+            }), 404
+        
+        # 修改成功响应
+        response_data = {
+            'success': True,
+            'state': 200,
+            'message': '响应成功',
+            'content': {
+                'id': course_id_int,
+                'courseName': request_data.get('courseName'),
+                'brief': request_data.get('brief'),
+                'price': float(request_data.get('price', 0)),
+                'previewFirstField': request_data.get('previewFirstField'),
+                'previewSecondField': request_data.get('previewSecondField'),
+                'updateTime': timestamp_thirteen()
+            }
+        }
+    else:
+        # 新增课程逻辑
+        new_course_id = random.randint(1000, 9999)
+        
+        response_data = {
+            'success': True,
+            'state': 200,
+            'message': '响应成功',
+            'content': {
+                'id': new_course_id,
+                'courseName': request_data.get('courseName'),
+                'brief': request_data.get('brief'),
+                'price': float(request_data.get('price', 0)),
+                'priceTag': request_data.get('priceTag'),
+                'discounts': float(request_data.get('discounts', 0)),
+                'discountsTag': request_data.get('discountsTag'),
+                'courseDescriptionMarkDown': request_data.get('courseDescriptionMarkDown', ''),
+                'courseDescription': request_data.get('courseDescription'),
+                'courseImgUrl': request_data.get('courseImgUrl', ''),
+                'isNew': int(request_data.get('isNew', 0)),
+                'isNewDes': request_data.get('isNewDes'),
+                'lastOperatorId': 0,
+                'autoOnlineTime': None,
+                'createTime': timestamp_thirteen(),
+                'updateTime': timestamp_thirteen(),
+                'isDel': 0,
+                'totalDuration': 0,
+                'courseListImg': request_data.get('courseListImg', ''),
+                'status': int(request_data.get('status', 0)),
+                'sortNum': int(request_data.get('sortNum', 0)),
+                'previewFirstField': request_data.get('previewFirstField'),
+                'previewSecondField': request_data.get('previewSecondField'),
+                'sales': int(request_data.get('sales', 0)),
+                'teacherName': request_data.get('teacherName'),
+                'position': request_data.get('position'),
+                'description': request_data.get('description'),
+                'activityCourse': request_data.get('activityCourse', False)
+            }
+        }
+    
+    return jsonify(response_data)
+
+
 @api.route('/login', methods=['get'])
 def set_cookie():
     """设置cookie"""

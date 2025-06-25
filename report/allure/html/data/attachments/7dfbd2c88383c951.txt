@@ -1,0 +1,18 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：2新增课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://47.115.225.121:8080/ssm_web/course/saveOrUpdateCourse
+INFO     common.recordlog:sendrequest.py:144 请求方式：post
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：2新增课程
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': 'Python实现接口自动化测试', 'courseDescriptionMarkDown': '', 'courseImgUrl': '', 'courseListImg': '', 'courseName': '新增课程测试6.9', 'discounts': '1', 'discountsTag': '泰坦', 'id': '', 'previewFirstField': 'Python编程自动化接口测试课程', 'previewSecondField': 'Python编程自动化接口测试课程', 'price': '1', 'sales': '1', 'sortNum': '', 'status': '', 'teacherName': '泰坦', 'position': '讲师', 'description': '讲师简介', 'teacherDTO': {}, 'activityCourse': False, 'activityCourseDTO': {}}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":200,"message":"响应成功","content":null}
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'status_code': 200}}, {'eq_db': {'SELECT course_name FROM course ORDER BY id DESC LIMIT 1;': '新增课程测试6.9'}}]
+INFO     common.recordlog:assertions.py:271 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+INFO     common.recordlog:connection.py:58 成功从连接池获取MySQL连接
+INFO     common.recordlog:connection.py:67 成功释放数据库连接回连接池
+INFO     common.recordlog:assertions.py:241 断言成功
+SQL: SELECT course_name FROM course ORDER BY id DESC LIMIT 1;
+预期: ['新增课程测试6.9']
+实际: ['新增课程测试6.9']
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

@@ -13,5 +13,5 @@
     - contains:
         status_code: 200
     extract:
-      cookie: 'headers:Set-Cookie: (.+?);'
-      token: 'body:$..access_token'
+      cookie: 'cookies:JSESSIONID'
+      token: '$..access_token'

@@ -1,0 +1,5 @@
+{
+    "message": "课程名称长度不能超过50个字符",
+    "state": 400,
+    "success": false
+}

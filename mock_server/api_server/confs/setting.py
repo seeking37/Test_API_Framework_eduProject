@@ -18,8 +18,6 @@ SHEET_ID = 0
 # 生成的测试报告类型，可以生成两个风格的报告，allure或tm
 REPORT_TYPE = 'allure'
 
-# 是否发送钉钉消息
-dd_msg = False
 
 # 文件路径
 FILE_PATH = {
@@ -30,8 +28,8 @@ FILE_PATH = {
     'TMR': os.path.join(DIR_BASE, 'report/tmreport'),
     'EXTRACT': os.path.join(DIR_BASE, 'extract.yaml'),
     'XML': os.path.join(DIR_BASE, 'data/sql'),
-    'RESULTXML': os.path.join(DIR_BASE, 'report'),
-    'EXCEL': os.path.join(DIR_BASE, 'data', '测试数据.xls')
+    'RESULTXML': os.path.join(DIR_BASE, 'report')
+    # 'EXCEL': os.path.join(DIR_BASE, 'data', '测试数据.xls')
 }
 
 # 默认请求头信息

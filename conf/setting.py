@@ -31,7 +31,7 @@ FILE_PATH = {
     'EXTRACT': os.path.join(DIR_BASE, 'extract.yaml'),
     'XML': os.path.join(DIR_BASE, 'data/sql'),
     'RESULTXML': os.path.join(DIR_BASE, 'report'),
-    'EXCEL': os.path.join(DIR_BASE, 'data', '测试数据.xls'),
+    # 'EXCEL': os.path.join(DIR_BASE, 'data', '测试数据.xls'),
     'BACKUP': os.path.join(DIR_BASE, 'backup')
 }
 

@@ -1,1 +1,0 @@
-{'Content-Type': 'application/json', 'Authorization': 'd3a187e4-2e7b-4b73-b1ed-7009c4eeb71c', 'Cookie': 'JSESSIONID=C96900131D02CC25EEEE2A28251CE76A'}

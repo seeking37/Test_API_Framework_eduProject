@@ -1,0 +1,16 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:test_course_findbyid.py:27 开始执行测试用例: 1.根据有效课程ID查询成功
+INFO     common.recordlog:sendrequest.py:142 接口名称：根据课程ID查询课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://47.115.225.121:8080/ssm_web/courseContent/findCourseByCourseId
+INFO     common.recordlog:sendrequest.py:144 请求方式：GET
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：1.根据有效课程ID查询成功
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:157 请求参数：{'params': {'courseId': 40}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":200,"message":"响应成功","content":{"id":40,"courseName":"新增课程测试6.9","brief":null,"price":0.0,"priceTag":null,"discounts":0.0,"discountsTag":null,"courseDescriptionMarkDown":null,"courseDescription":null,"courseImgUrl":null,"isNew":0,"isNewDes":null,"lastOperatorId":0,"autoOnlineTime":null,"createTime":null,"updateTime":null,"isDel":0,"totalDuration":0,"courseListImg":null,"status":0,"sortNum":0,"previewFirstField":null,"previewSecondField":null,"sales":0}}
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'success': True}}, {'eq': {'state': 200}}, {'contains': {'message': '响应成功'}}, {'eq': {'content.id': 40}}]
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'success' 预期值: True, 实际值: True
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'state' 预期值: 200, 实际值: 200
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【响应成功】,实际结果【响应成功】
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'content.id' 预期值: 40, 实际值: 40
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

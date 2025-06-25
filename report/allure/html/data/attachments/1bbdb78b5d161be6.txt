@@ -1,1 +1,0 @@
-{'Content-Type': 'application/json', 'Cookie': 'JSESSIONID=42F9143E27CB2A94ED5FFEB26D149F4A'}

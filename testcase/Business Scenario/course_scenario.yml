@@ -14,8 +14,8 @@
 #        - contains:
 #            status_code: 200
 #      extract:
-#        cookie: 'headers:Set-Cookie: (.+?);'
-#        token: 'body:$..access_token'
+#        cookie: 'cookies:JSESSIONID'
+#        token: '$..access_token'
 - baseInfo:
     api_name: 1查询课程
     url: /ssm_web/course/findAllCourse

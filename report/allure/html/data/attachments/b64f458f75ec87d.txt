@@ -1,0 +1,3 @@
+JSONPath 'content.id':
+预期值: 40
+实际值: 40

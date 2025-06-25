@@ -8,6 +8,8 @@ from base.generateId import m_id, c_id
 
 # @allure.feature(next(m_id) + '登录功能')
 @allure.feature(next(m_id) + '用户管理')
+@pytest.mark.user_management
+@pytest.mark.api_single
 class TestUserManager:
 
     # 场景，allure报告的目录结构

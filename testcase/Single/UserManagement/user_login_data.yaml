@@ -13,9 +13,9 @@
     - eq:
         status_code: 200
 #    extract:
-#      cookie: 'headers:Set-Cookie: (.+?);'
-#      authorization: 'body:$..access_token'
-#      authorization: 'body:"access_token":"(.+?)"',
+#      cookie: 'cookies:JSESSIONID'
+#      authorization: '$..access_token'
+#      authorization: '"access_token":"(.+?)"',
   - case_name: 密码错误
     params:
       phone: '15321919666'

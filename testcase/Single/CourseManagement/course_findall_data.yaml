@@ -1,0 +1,42 @@
+- baseInfo:
+    api_name: 查询所有课程
+    url: /ssm_web/course/findAllCourse
+    method: POST
+    header:
+      Content-Type: application/json
+      Authorization: ${get_extract_data(token)}
+      Cookie: ${get_extract_data(cookie)}
+  testCase:
+    - case_name: 查询所有课程成功
+      json: {}
+      validation:
+        - eq: {status_code: 200}
+        - eq: {success: true}
+        - eq: {state: 200}
+        - contains: {message: "响应成功"}
+      # extract:
+      #   first_course_id: '$.content[0].id'
+      #   course_count: '$.content.length'
+    
+#    - case_name: 缺少Authorization头
+#      header:
+#        Content-Type: application/json
+#        Cookie: ${get_extract_data(cookie)}
+#        # Authorization头被移除
+#      json: {}
+#      validation:
+#        - neq: {status_code: 200}
+    
+#    - case_name: 错误的Authorization头
+#      header:
+#        Authorization: "Bearer invalid_token_12345"
+#      json: {}
+#      validation:
+#        - neq: {status_code: 200}
+        
+#    - case_name: 错误的Content-Type头
+#      header:
+#        Content-Type: application/xml
+#      json: {}
+#      validation:
+#        - neq: {status_code: 200}

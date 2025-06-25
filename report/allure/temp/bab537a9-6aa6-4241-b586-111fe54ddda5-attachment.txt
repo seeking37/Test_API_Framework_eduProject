@@ -1,0 +1,5 @@
+{
+    "message": "Content-Type必须为application/json",
+    "state": 400,
+    "success": false
+}

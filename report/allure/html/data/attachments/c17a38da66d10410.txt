@@ -1,0 +1,31 @@
+{
+    "success": true,
+    "state": 200,
+    "message": "响应成功",
+    "content": {
+        "id": 40,
+        "courseName": "新增课程测试6.9",
+        "brief": null,
+        "price": 0.0,
+        "priceTag": null,
+        "discounts": 0.0,
+        "discountsTag": null,
+        "courseDescriptionMarkDown": null,
+        "courseDescription": null,
+        "courseImgUrl": null,
+        "isNew": 0,
+        "isNewDes": null,
+        "lastOperatorId": 0,
+        "autoOnlineTime": null,
+        "createTime": null,
+        "updateTime": null,
+        "isDel": 0,
+        "totalDuration": 0,
+        "courseListImg": null,
+        "status": 0,
+        "sortNum": 0,
+        "previewFirstField": null,
+        "previewSecondField": null,
+        "sales": 0
+    }
+}

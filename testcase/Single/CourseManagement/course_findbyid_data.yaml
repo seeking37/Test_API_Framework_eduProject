@@ -1,0 +1,60 @@
+- baseInfo:
+    api_name: 根据课程ID查询课程
+    url: /ssm_web/courseContent/findCourseByCourseId
+    method: GET
+    header:
+      Authorization: ${get_extract_data(token)}
+      Cookie: ${get_extract_data(cookie)}
+  testCase:
+    - case_name: 1.根据有效课程ID查询成功
+      params:
+        courseId: 40
+      validation:
+      - eq: {success: true}
+      - eq: {state: 200}
+      - contains: {message: "响应成功"}
+      - eq: {content.id: 40}
+        
+    - case_name: 2.查询不存在的课程ID
+      params:
+        courseId: 999999
+      validation:
+      - eq: {status_code: 200}
+      - eq: {success: true}
+      - eq: {state: 200}
+      
+    - case_name: 3.缺少courseId参数
+      params: {}
+      validation:
+      - neq: {status_code: 200}
+      
+    - case_name: 无效的courseId参数类型
+      params:
+        courseId: "invalid_id"
+      validation:
+      - neq: {status_code: 200}
+      
+#    - case_name: 缺少Authorization头
+#      header:
+#        Cookie: ${get_extract_data(cookie)}
+#      params:
+#        courseId: 20
+#      validation:
+#      - neq: {status_code: 200}
+
+#    - case_name: 过期的Authorization
+#      header:
+#        Cookie: ${get_extract_data(cookie)}
+#        Authorization: 69524b2d-a96e-477c-b50e-bb3bbd4f2b57
+#      params:
+#        courseId: 20
+#      validation:
+#      - neq: {status_code: 200}
+#
+#    - case_name: 缺少Cookie头
+#      header:
+#        Authorization: ${get_extract_data(token)}
+#      params:
+#        courseId: 22
+#      validation:
+#      - neq: {status_code: 200}

@@ -5,34 +5,50 @@
     </parameter>
     <parameter>
         <key>system</key>
-        <value>Window10</value>
+        <value>Ubuntu Latest</value>
     </parameter>
     <parameter>
         <key>python version</key>
-        <value>3.8.2</value>
+        <value>3.12</value>
     </parameter>
     <parameter>
         <key>allure version</key>
-        <value>allure-2.13.8</value>
+        <value>allure-2.13.5</value>
     </parameter>
     <parameter>
         <key>BaseUrl</key>
-        <value>https://www.baidu.com</value>
+        <value>http://47.115.225.121:8080</value>
+    </parameter>
+    <parameter>
+        <key>Mock Server</key>
+        <value>http://127.0.0.1:8787</value>
+    </parameter>
+    <parameter>
+        <key>Database</key>
+        <value>MySQL 47.115.225.121:3306</value>
+    </parameter>
+    <parameter>
+        <key>CI Platform</key>
+        <value>GitHub Actions</value>
+    </parameter>
+    <parameter>
+        <key>Package Manager</key>
+        <value>uv (Python)</value>
     </parameter>
     <parameter>
         <key>environment</key>
-        <value>生产环境</value>
+        <value>测试环境</value>
     </parameter>
     <parameter>
         <key>Project</key>
-        <value>xxx项目接口自动化测试</value>
+        <value>接口自动化测试框架</value>
     </parameter>
     <parameter>
         <key>email</key>
-        <value>123456@163.com;7892223@qq.com;12333@163.com</value>
+        <value>email@example.com</value>
     </parameter>
     <parameter>
         <key>author</key>
-        <value>张三</value>
+        <value>seeking</value>
     </parameter>
 </environment>

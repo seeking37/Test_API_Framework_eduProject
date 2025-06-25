@@ -1,0 +1,47 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：新增课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://127.0.0.1:8787/ssm_web/course/saveOrUpdateCourse
+INFO     common.recordlog:sendrequest.py:144 请求方式：POST
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：新增课程长课程名称50字符
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': '测试课程简介', 'courseName': '这是一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的课程名称', 'previewFirstField': '测试预览'}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{
+  "content": {
+    "activityCourse": false,
+    "autoOnlineTime": null,
+    "brief": "\u6d4b\u8bd5\u8bfe\u7a0b\u7b80\u4ecb",
+    "courseDescription": null,
+    "courseDescriptionMarkDown": "",
+    "courseImgUrl": "",
+    "courseListImg": "",
+    "courseName": "\u8fd9\u662f\u4e00\u4e2a\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u975e\u5e38\u957f\u7684\u8bfe\u7a0b\u540d\u79f0",
+    "createTime": 1750810844000,
+    "description": null,
+    "discounts": 0.0,
+    "discountsTag": null,
+    "id": 2824,
+    "isDel": 0,
+    "isNew": 0,
+    "isNewDes": null,
+    "lastOperatorId": 0,
+    "position": null,
+    "previewFirstField": "\u6d4b\u8bd5\u9884\u89c8",
+    "previewSecondField": null,
+    "price": 0.0,
+    "priceTag": null,
+    "sales": 0,
+    "sortNum": 0,
+    "status": 0,
+    "teacherName": null,
+    "totalDuration": 0,
+    "updateTime": 1750810844000
+  },
+  "message": "\u54cd\u5e94\u6210\u529f",
+  "state": 200,
+  "success": true
+}
+
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'status_code': 200}}]
+INFO     common.recordlog:assertions.py:271 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

@@ -1,0 +1,19 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：修改课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://127.0.0.1:8787/ssm_web/course/saveOrUpdateCourse
+INFO     common.recordlog:sendrequest.py:144 请求方式：POST
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：修改不存在的课程
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': '测试简介', 'courseName': '测试课程', 'previewFirstField': '测试预览', 'id': '999999'}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{
+  "message": "\u8bfe\u7a0b\u4e0d\u5b58\u5728",
+  "state": 404,
+  "success": false
+}
+
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'success': False}}, {'eq': {'state': 404}}, {'contains': {'message': '课程不存在'}}]
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'success' 预期值: False, 实际值: False
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'state' 预期值: 404, 实际值: 404
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【课程不存在】,实际结果【课程不存在】
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

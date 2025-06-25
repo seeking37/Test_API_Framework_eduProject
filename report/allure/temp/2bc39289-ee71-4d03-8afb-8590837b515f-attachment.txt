@@ -1,0 +1,5 @@
+{
+    "message": "价格不能为负数",
+    "state": 400,
+    "success": false
+}

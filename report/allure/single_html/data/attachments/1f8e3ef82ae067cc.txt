@@ -1,4 +1,0 @@
-{
-    "message": "页码必须大于0",
-    "success": false
-}

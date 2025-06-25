@@ -1,0 +1,18 @@
+INFO     common.recordlog:connection.py:58 成功从连接池获取MySQL连接
+INFO     common.recordlog:db_management.py:39 执行MySQL备份命令
+INFO     common.recordlog:db_management.py:85 执行MySQL数据初始化命令
+INFO     common.recordlog:test_course_save.py:37 课程表初始化成功
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：新增课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://47.115.225.121:8080/ssm_web/course/saveOrUpdateCourse
+INFO     common.recordlog:sendrequest.py:144 请求方式：POST
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：1.新增课程成功
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': '新增课程测试1111111111', 'courseDescriptionMarkDown': '', 'courseImgUrl': '', 'courseListImg': '', 'courseName': '新增课程测试1111111111', 'discounts': '0.8', 'discountsTag': '限时优惠', 'id': '', 'previewFirstField': '测试新增课程', 'previewSecondField': '123456', 'price': '299', 'sales': '0', 'sortNum': '1', 'status': '0', 'teacherName': '测试讲师', 'position': '测试测试工程师', 'description': '测试测试测试', 'teacherDTO': {}, 'activityCourse': False, 'activityCourseDTO': {}}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":200,"message":"响应成功","content":null}
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'success': True}}, {'eq': {'state': 200}}, {'contains': {'message': '响应成功'}}]
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'success' 预期值: True, 实际值: True
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'state' 预期值: 200, 实际值: 200
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【响应成功】,实际结果【响应成功】
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

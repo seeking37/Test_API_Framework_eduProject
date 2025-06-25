@@ -156,109 +156,79 @@ class RequestBase(object):
             allure_response = response
         return allure_response
 
-    # def extract_data(self, testcase_extract, response):
-    #     """
-    #     提取接口的返回参数，支持正则表达式和json提取，提取单个参数
-    #     :param testcase_extract: testcase文件yaml中的extract值
-    #     :param response: 接口的实际返回值,str类型
-    #     :return:
-    #     """
-    #     pattern_lst = ['(.+?)', '(.*?)', r'(\d+)', r'(\d*)']
-    #     try:
-    #         for key, value in testcase_extract.items():
-    #             for pat in pattern_lst:
-    #                 if pat in value:
-    #                     ext_list = re.search(value, response)
-    #                     if pat in [r'(\d+)', r'(\d*)']:
-    #                         extract_date = {key: int(ext_list.group(1))}
-    #                     else:
-    #                         extract_date = {key: ext_list.group(1)}
-    #                     logs.info('正则提取到的参数：%s' % extract_date)
-    #                     self.read.write_yaml_data(extract_date)
-    #             if "$" in value:
-    #                 ext_json = jsonpath.jsonpath(json.loads(response), value)[0]
-    #                 if ext_json:
-    #                     extract_date = {key: ext_json}
-    #                 else:
-    #                     extract_date = {key: "未提取到数据，该接口返回结果可能为空"}
-    #                 logs.info('json提取到参数：%s' % extract_date)
-    #                 self.read.write_yaml_data(extract_date)
-    #     except:
-    #         logs.error('接口返回值提取异常，请检查yaml文件extract表达式是否正确！')
     def extract_data(self, testcase_extract, response):
         """
-        提取接口返回值，支持响应头/响应体 的 JSONPath/正则表达式 两种方式
+        提取接口返回值，支持响应体JSONPath/正则表达式提取和cookie提取
         :param  testcase_extract = {
-            'session_id': 'headers:Set-Cookie: (.+?);',
-            'session_id2': 'headers:$.Set-Cookie',
-            'token1': 'body:"access_token":"(.+?)"',
-            'token': 'body:$..access_token',
-            'message': '$.message'
+            'token': '$..access_token',           # JSONPath提取响应体
+            'message': '$.message',               # JSONPath提取响应体  
+            'user_id': '"user_id":"(.+?)"',       # 正则表达式提取响应体
+            'session_id': 'cookies:JSESSIONID',   # 提取指定名称的cookie
+            'all_cookies': 'cookies:*'            # 提取所有cookies（字典形式）
         }
         :param response: requests.Response 对象
         """
         try:
             extracted = {}
             response_text = response.text
-            response_headers = dict(response.headers)  # 转换为普通字典
 
             for key, expr in testcase_extract.items():
                 expr = expr.strip()
                 value = None
 
-                # 解析表达式格式 (来源:提取规则)
-                parts = expr.split(':', 1)
-                source = 'body'  # 默认来源为响应体
-                extract_expr = expr
-
-                if len(parts) > 1 and parts[0] in ('headers', 'body'):
-                    source = parts[0]
-                    extract_expr = parts[1].strip()
-
-                # 响应头处理
-                if source == 'headers':
-                    # 正则表达式
-                    if ':' in extract_expr:
-                        header_field, regex_expr = extract_expr.split(':', 1)
-                        header_value = response_headers.get(header_field.strip(), '')
-                        match = re.search(regex_expr.strip(), header_value)
-                        value = match.group(1) if match else None
-                    elif extract_expr.startswith('$'):
-                        # 直接对header字典使用jsonpath
-                        result = jsonpath.jsonpath(response_headers, extract_expr)
+                # Cookie提取
+                if expr.startswith('cookies:'):
+                    cookie_name = expr.split(':', 1)[1].strip()
+                    if cookie_name == '*':
+                        # 提取所有cookies，手动构建字典避免同名冲突
+                        cookie_dict = {}
+                        for cookie in response.cookies:
+                            # 如果存在同名cookie，使用域名作为后缀区分
+                            key = cookie.name
+                            if key in cookie_dict:
+                                key = f"{cookie.name}_{cookie.domain}"
+                            cookie_dict[key] = f"{cookie.name}={cookie.value}"
+                        value = cookie_dict
+                    else:
+                        # 提取指定名称的cookie，返回完整格式name=value
+                        for cookie in response.cookies:
+                            if cookie.name == cookie_name:
+                                value = f"{cookie.name}={cookie.value}"
+                                break
+                
+                # 响应体提取（JSONPath方式）
+                elif expr.startswith('$'):
+                    try:
+                        data = json.loads(response_text)
+                        result = jsonpath.jsonpath(data, expr)
                         value = result[0] if result else None
-                        # 直接获取头字段值
-                    else:
-                        value = response_headers.get(extract_expr.lower())
+                    except json.JSONDecodeError:
+                        print(f"响应不是有效JSON，无法使用JSONPath提取: {key}")
+                
+                # 响应体提取（正则表达式方式）
+                else:
+                    match = re.search(expr, response_text)
+                    if match:
+                        value = match.group(1) if match.lastindex else match.group(0)
+                        # 如果提取的值是数字字符串，转换为整数
+                        if isinstance(value, str) and value.isdigit():
+                            value = int(value)
 
-                # 响应体处理
-                else:  # source == 'body'
-                    if extract_expr.startswith('$'):
-                        try:
-                            data = json.loads(response_text)
-                            result = jsonpath.jsonpath(data, extract_expr)
-                            value = result[0] if result else None
-                        except json.JSONDecodeError:
-                            print("响应不是有效JSON")
-                    else:
-                        match = re.search(extract_expr, response_text)
-                        if match:
-                            value = match.group(1) if match.lastindex else match.group(0)
-                            if isinstance(value, str) and value.isdigit():
-                                value = int(value)
-
+                # 保存提取结果
                 if value is not None:
                     extracted[key] = value
                     print(f"提取成功: {key} = {value}")
-
                 else:
                     print(f"提取失败: {key} ({expr})")
+
+            # 将提取的数据写入yaml文件
             self.read.write_yaml_data(extracted)
             return extracted
 
         except Exception as e:
             print(f"数据提取异常: {str(e)}")
             return None
+
     def extract_data_list(self, testcase_extract_list, response):
         """
         示例见末尾

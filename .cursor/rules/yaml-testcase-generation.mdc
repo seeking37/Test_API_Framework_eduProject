@@ -1,0 +1,188 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# API接口测试用例YAML生成规范
+
+本项目是一个API接口自动化测试框架，使用YAML格式编写测试用例。当需要根据接口文档生成测试用例时，请遵循以下规范：
+
+## 项目结构说明
+
+- **业务场景测试用例**: 存放在 [testcase/Business Scenario/](mdc:testcase/Business Scenario) 目录
+- **单接口测试用例**: 存放在 [testcase/Single/](mdc:testcase/Single) 目录下的各功能模块中
+- **单接口测试数据文件**: 与对应的测试用例代码存放在同一目录下（如 [testcase/Single/UserManagement/](mdc:testcase/Single/UserManagement)）
+- **业务场景测试数据文件**: 与对应的测试用例代码存放在同一目录下（如 [testcase/Business Scenario/](mdc:testcase/Business Scenario)）
+- **公共测试数据文件**: 存放在 [data/](mdc:data) 目录（如登录凭据等共享数据）
+- **YAML工具类**: [common/readyaml.py](mdc:common/readyaml.py)
+- **API工具类**: [base/apiutil_business.py](mdc:base/apiutil_business.py) （业务场景） 和 [base/apiutil.py](mdc:base/apiutil.py) （单接口）
+
+## YAML测试用例结构规范
+
+### 1. 单接口测试用例格式（如用户登录）
+
+参考文件：[testcase/Single/UserManagement/user_login_data.yaml](mdc:testcase/Single/UserManagement/user_login_data.yaml)
+
+```yaml
+- baseInfo:                           # 接口基础信息（必需）
+    api_name: 用户登录                   # 接口名称
+    url: /ssm_web/user/login           # 接口路径
+    method: POST                       # 请求方法
+    header:                           # 请求头（可选）
+      Content-Type: application/json
+    cookies:                          # Cookie信息（可选）
+      JSESSIONID: xxx
+  testCase:                           # 测试用例列表（必需）
+  - case_name: 登录成功                 # 测试用例名称
+    params:                           # 请求参数（POST form-data）
+      phone: '15321919666'
+      password: '123456'
+    json:                             # JSON请求体（POST json）
+      username: test
+      password: 123456
+    validation:                       # 断言验证（必需）
+    - contains:                       # 包含断言
+        message: "响应成功"
+    - eq:                            # 相等断言
+        status_code: 200
+    extract:                          # 数据提取（可选）
+      cookie: 'cookies:JSESSIONID'     # 提取Cookie
+      token: '$..access_token'         # JSONPath提取
+      user_id: '"user_id":"(.+?)"'     # 正则表达式提取
+```
+
+### 2. 业务场景测试用例格式（如课程管理流程）
+
+参考文件：[testcase/Business Scenario/course_scenario.yml](mdc:testcase/Business Scenario/course_scenario.yml)
+
+```yaml
+- baseInfo:                           # 第一个接口
+    api_name: 查询课程
+    url: /ssm_web/course/findAllCourse
+    method: post
+    header:
+      Content-Type: application/json
+      Authorization: ${get_extract_data(token)}  # 使用提取的数据
+      Cookie: ${get_extract_data(cookie)}
+  testCase:
+    - case_name: 查询所有课程
+      json: {}
+      validation:
+        - eq:
+            status_code: 200
+
+- baseInfo:                           # 第二个接口
+    api_name: 新增课程
+    url: /ssm_web/course/saveOrUpdateCourse
+    method: post
+    header:
+      Content-Type: application/json
+      Authorization: ${get_extract_data(token)}
+      Cookie: ${get_extract_data(cookie)}
+  testCase:
+    - case_name: 新增课程
+      json:
+        courseName: "测试课程"
+        brief: "课程简介"
+        price: "100"
+      validation:
+        - eq:
+            status_code: 200
+        - eq_db:                      # 数据库断言
+            "SELECT course_name FROM course ORDER BY id DESC LIMIT 1;": "测试课程"
+```
+
+## 断言类型说明
+
+### 响应断言
+- `eq`: 相等断言 `{status_code: 200}`
+- `neq`: 不等断言 `{status_code: 500}`
+- `contains`: 包含断言 `{message: "成功"}`
+- `not_contains`: 不包含断言 `{message: "失败"}`
+- `gt`: 大于断言 `{count: 10}`
+- `lt`: 小于断言 `{count: 100}`
+- `gte`: 大于等于断言
+- `lte`: 小于等于断言
+
+### 数据库断言
+- `eq_db`: 数据库查询结果相等断言
+- `contains_db`: 数据库查询结果包含断言
+
+## 数据提取规范
+
+### Cookie提取
+```yaml
+extract:
+  session_id: 'cookies:JSESSIONID'    # 提取指定cookie
+  all_cookies: 'cookies:*'            # 提取所有cookies
+```
+
+### JSONPath提取
+```yaml
+extract:
+  token: '$..access_token'            # 提取access_token
+  user_id: '$.data.userId'            # 提取用户ID
+  ids_list: '$..id'                   # 提取所有id字段
+```
+
+### 正则表达式提取
+```yaml
+extract:
+  user_id: '"user_id":"(.+?)"'        # 正则提取用户ID
+```
+
+### 列表数据提取
+```yaml
+extract_list:
+  resource_ids: '$..resourceList[*].id'  # 提取列表中所有id
+```
+
+## 数据替换和引用
+
+### 使用提取的数据
+```yaml
+header:
+  Authorization: ${get_extract_data(token)}  # 引用提取的token
+  Cookie: ${get_extract_data(cookie)}
+```
+
+### 使用配置文件数据
+```yaml
+params:
+  username: ${get_yaml_data(username)}      # 引用配置数据
+```
+
+## 文件命名规范
+
+1. **单接口测试用例**: `功能名_data.yaml` （如：`user_login_data.yaml`）
+2. **业务场景测试用例**: `场景名_scenario.yml` （如：`course_scenario.yml`）
+3. **测试数据文件**: `数据类型.yml` （如：`loginName.yml`）
+
+## 测试用例组织原则
+
+1. **单接口测试**: 一个接口一个文件，包含正常用例和异常用例
+2. **业务场景测试**: 多个关联接口组成一个完整的业务流程
+3. **数据驱动**: 使用参数化实现多组测试数据
+4. **断言完整**: 包含响应状态码、响应内容、数据库验证等
+5. **数据提取**: 合理提取关联数据供后续接口使用
+6. **文件存放**: 测试用例数据文件与对应的测试代码文件存放在同一目录下，便于管理和维护
+
+## 生成新测试用例时的检查清单
+
+- [ ] 确定是单接口还是业务场景测试
+- [ ] 选择正确的存放目录（单接口测试：功能模块目录下；业务场景测试：Business Scenario目录下）
+- [ ] 确保测试数据文件与测试代码文件在同一目录下
+- [ ] 使用规范的YAML结构
+- [ ] 包含完整的baseInfo信息
+- [ ] 设计正常和异常测试用例
+- [ ] 添加适当的断言验证
+- [ ] 如需要，添加数据提取配置
+- [ ] 验证YAML语法正确性
+- [ ] 确保文件编码为UTF-8
+
+遵循以上规范可以确保生成的测试用例与项目框架兼容，并能正确执行自动化测试。
+
+
+
+
+

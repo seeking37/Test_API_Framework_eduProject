@@ -1,0 +1,15 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：修改课程
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://47.115.225.121:8080/ssm_web/course/saveOrUpdateCourse
+INFO     common.recordlog:sendrequest.py:144 请求方式：POST
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：修改课程成功
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:154 请求参数：{'json': {'brief': 'Python接口自动化测试课程简介（已修改）', 'courseDescriptionMarkDown': '详细的课程描述，包含完整的学习路径', 'courseName': 'Python接口自动化测试课程（修改版）', 'discounts': '0.7', 'discountsTag': '超级优惠', 'id': 3, 'previewFirstField': '全面掌握Python接口测试', 'previewSecondField': '企业级项目实战', 'price': '399', 'sales': '10', 'sortNum': '2', 'status': '1', 'teacherName': '资深讲师', 'position': '测试架构师', 'description': '10年测试经验，精通各种测试框架', 'teacherDTO': {}, 'activityCourse': True, 'activityCourseDTO': {}}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":200,"message":"响应成功","content":null}
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'status_code': 200}}, {'eq': {'success': True}}, {'eq': {'state': 200}}, {'contains': {'message': '响应成功'}}]
+INFO     common.recordlog:assertions.py:271 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'success' 预期值: True, 实际值: True
+INFO     common.recordlog:assertions.py:108 相等断言成功：JSONPath 'state' 预期值: 200, 实际值: 200
+INFO     common.recordlog:assertions.py:63 响应文本断言成功：【message】预期结果【响应成功】,实际结果【响应成功】
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------

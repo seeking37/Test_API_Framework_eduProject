@@ -1,0 +1,14 @@
+INFO     common.recordlog:conftest.py:21 -------------接口测试开始--------------
+INFO     common.recordlog:sendrequest.py:142 接口名称：4更新课程状态（上架/下架）
+INFO     common.recordlog:sendrequest.py:143 请求地址：http://47.115.225.121:8080/ssm_web/course/updateCourseStatus
+INFO     common.recordlog:sendrequest.py:144 请求方式：get
+INFO     common.recordlog:sendrequest.py:145 测试用例名称：4更新课程状态（上架/下架）
+INFO     common.recordlog:sendrequest.py:146 请求头：{'Content-Type': 'application/json', 'Authorization': '0fdf0718-3e9a-48cc-bfcf-76549278f91f', 'Cookie': 'JSESSIONID=AB07D10EB3E10EF466525106650D493F'}
+INFO     common.recordlog:sendrequest.py:157 请求参数：{'params': {'status': 1, 'id': 289}}
+INFO     common.recordlog:sendrequest.py:108 接口返回信息：{"success":true,"state":200,"message":"响应成功","content":{"status":1}}
+INFO     common.recordlog:assertions.py:297 yaml文件预期结果：[{'eq': {'status_code': 200}}]
+INFO     common.recordlog:assertions.py:271 接口返回码包含断言成功：预期结果【200】,实际结果【200】
+INFO     common.recordlog:assertions.py:322 测试成功
+INFO     common.recordlog:conftest.py:23 -------------接口测试结束--------------
+INFO     common.recordlog:db_management.py:63 执行MySQL还原命令
+INFO     common.recordlog:test_course_scenario.py:39 数据库还原成功

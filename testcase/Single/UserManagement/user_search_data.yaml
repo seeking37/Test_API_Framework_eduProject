@@ -4,7 +4,7 @@
     method: post
     header:
       Content-Type: application/json
-      Authorization: ${get_extract_data(authorization)}
+      Authorization: ${get_extract_data(token)}
   testCase:
     - case_name: 1.正常搜索-按用户名
       json:

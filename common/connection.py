@@ -11,7 +11,6 @@ from clickhouse_sqlalchemy import make_session
 from sqlalchemy import create_engine
 from conf.operationConfig import OperationConfig
 from common.recordlog import logs
-from common.two_dimension_data import print_table
 from dbutils.pooled_db import PooledDB
 
 conf = OperationConfig()

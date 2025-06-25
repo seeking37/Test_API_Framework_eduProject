@@ -14,8 +14,8 @@
         - eq:
             status_code: 200
       extract:
-        cookie_1: 'headers:Set-Cookie: (.+?);'
-        token_1: 'body:$..access_token'
+        cookie_1: 'cookies:JSESSIONID'
+        token_1: '$..access_token'
 - baseInfo:
     api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
@@ -52,8 +52,8 @@
         - eq:
             status_code: 200
       extract:
-        cookie_3: 'headers:Set-Cookie: (.+?);'
-        token_3: 'body:$..access_token'
+        cookie_3: 'cookies:JSESSIONID'
+        token_3: '$..access_token'
 - baseInfo:
     api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
@@ -90,8 +90,8 @@
         - eq:
             status_code: 200
       extract:
-        cookie_7: 'headers:Set-Cookie: (.+?);'
-        token_7: 'body:$..access_token'
+        cookie_7: 'cookies:JSESSIONID'
+        token_7: '$..access_token'
 - baseInfo:
     api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
@@ -128,8 +128,8 @@
         - eq:
             status_code: 200
       extract:
-        cookie_2_7: 'headers:Set-Cookie: (.+?);'
-        token_2_7: 'body:$..access_token'
+        cookie_2_7: 'cookies:JSESSIONID'
+        token_2_7: '$..access_token'
 - baseInfo:
     api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions
@@ -166,8 +166,8 @@
         - eq:
             status_code: 200
       extract:
-        cookie_null: 'headers:Set-Cookie: (.+?);'
-        token_null: 'body:$..access_token'
+        cookie_null: 'cookies:JSESSIONID'
+        token_null: '$..access_token'
 - baseInfo:
     api_name: 查询用户权限
     url: /ssm_web/user/getUserPermissions

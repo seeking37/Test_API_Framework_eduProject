@@ -10,6 +10,8 @@ from common.recordlog import logs
 # 注意：业务场景的接口测试要调用base目录下的apiutil_business文件
 
 @allure.feature(next(m_id) + '课程管理（业务场景）')
+@pytest.mark.course_management
+@pytest.mark.api_scenario
 class TestEBusinessScenario:
 
     @pytest.fixture(scope="class", autouse=True)

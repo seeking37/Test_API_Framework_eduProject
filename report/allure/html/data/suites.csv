@@ -1,50 +1,137 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","119","获取登录态-超级管理员","testcase.Business Scenario","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_permissions","",""
-"","116","登录成功","testcase.Single.UserManagement","Sun Jun 15 15:03:23 CST 2025","passed","Sun Jun 15 15:03:23 CST 2025","TestUserManager","test_user_login","",""
-"","99","1.正常搜索-按用户名","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","8","6.请求参数为空","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","27","12.每页条数小于0","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","32","14.搜索不存在的用户","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","8","11.页码小于1","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","34","4.缺少必填参数currentPage","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_find","",""
-"","110","非手机号码","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_login","",""
-"","118","7.测试过期的Authorization","testcase.Business Scenario","Sun Jun 15 15:03:28 CST 2025","passed","Sun Jun 15 15:03:29 CST 2025","TestUserManager","test_user_permissions","",""
-"","124","8.测试缺少Cookie","testcase.Business Scenario","Sun Jun 15 15:03:29 CST 2025","passed","Sun Jun 15 15:03:29 CST 2025","TestUserManager","test_user_permissions","",""
-"","803","1.查询用户权限-超级管理员","testcase.Business Scenario","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:27 CST 2025","TestUserManager","test_user_permissions","",""
-"","33","16.验证分页信息完整性","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","206","3.查询用户权限-普通用户","testcase.Business Scenario","Sun Jun 15 15:03:27 CST 2025","passed","Sun Jun 15 15:03:28 CST 2025","TestUserManager","test_user_permissions","",""
-"","108","6.分页查询-每页5条","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","23","7.参数类型错误","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","115","获取登录态-普通用户","testcase.Business Scenario","Sun Jun 15 15:03:27 CST 2025","passed","Sun Jun 15 15:03:27 CST 2025","TestUserManager","test_user_permissions","",""
-"","8","8.缺少必填参数pageSize","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","102","9.测试过期的Cookie","testcase.Business Scenario","Sun Jun 15 15:03:29 CST 2025","passed","Sun Jun 15 15:03:29 CST 2025","TestUserManager","test_user_permissions","",""
-"","100","获取登录态-无权限用户","testcase.Business Scenario","Sun Jun 15 15:03:28 CST 2025","passed","Sun Jun 15 15:03:28 CST 2025","TestUserManager","test_user_permissions","",""
-"","97","3.每页显示5条数据","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_find","",""
-"","96","5.分页查询-第二页","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","failed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","129","获取登录态-课程管理员","testcase.Business Scenario","Sun Jun 15 15:03:27 CST 2025","passed","Sun Jun 15 15:03:27 CST 2025","TestUserManager","test_user_permissions","",""
-"","32","10.参数类型错误","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","119","1.正常查询第一页用户列表","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_find","",""
-"","76","手机号码为空","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_login","",""
-"","103","3.正常搜索-组合条件","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","27","7.缺少必填参数currentPage","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","9","10.页码超出范围","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","99","5.查询用户权限-无权限用户","testcase.Business Scenario","Sun Jun 15 15:03:28 CST 2025","broken","Sun Jun 15 15:03:28 CST 2025","TestUserManager","test_user_permissions","",""
-"","114","获取登录态-权限管理员+普通用户","testcase.Business Scenario","Sun Jun 15 15:03:28 CST 2025","passed","Sun Jun 15 15:03:28 CST 2025","TestUserManager","test_user_permissions","",""
-"","100","6.测试缺少Authorization头","testcase.Business Scenario","Sun Jun 15 15:03:28 CST 2025","broken","Sun Jun 15 15:03:28 CST 2025","TestUserManager","test_user_permissions","",""
-"","7","5.缺少必填参数pageSize","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_find","",""
-"","259","2.查询用户权限-课程管理员","testcase.Business Scenario","Sun Jun 15 15:03:27 CST 2025","passed","Sun Jun 15 15:03:27 CST 2025","TestUserManager","test_user_permissions","",""
-"","281","4.查询用户组合权限-权限管理员+普通用户","testcase.Business Scenario","Sun Jun 15 15:03:28 CST 2025","passed","Sun Jun 15 15:03:28 CST 2025","TestUserManager","test_user_permissions","",""
-"","100","密码为空","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_login","",""
-"","159","3修改课程","testcase.Business Scenario","Sun Jun 15 15:03:35 CST 2025","passed","Sun Jun 15 15:03:35 CST 2025","TestEBusinessScenario","test_course_scenario","",""
-"","271","2新增课程","testcase.Business Scenario","Sun Jun 15 15:03:35 CST 2025","passed","Sun Jun 15 15:03:35 CST 2025","TestEBusinessScenario","test_course_scenario","",""
-"","88","密码错误","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_login","",""
-"","97","2.正常搜索-按时间范围","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","18","9.每页条数小于1","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","33","13.页码超出范围","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","111","手机号码位数不足","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_login","",""
-"","192","1查询所有课程","testcase.Business Scenario","Sun Jun 15 15:03:35 CST 2025","passed","Sun Jun 15 15:03:35 CST 2025","TestEBusinessScenario","test_course_scenario","",""
-"","98","2.查询第二页用户列表","testcase.Single.UserManagement","Sun Jun 15 15:03:24 CST 2025","passed","Sun Jun 15 15:03:24 CST 2025","TestUserManager","test_user_find","",""
-"","31","8.页码小于1","testcase.Single.UserManagement","Sun Jun 15 15:03:25 CST 2025","passed","Sun Jun 15 15:03:25 CST 2025","TestUserManager","test_user_find","",""
-"","106","4更新课程状态（上架/下架）","testcase.Business Scenario","Sun Jun 15 15:03:35 CST 2025","passed","Sun Jun 15 15:03:35 CST 2025","TestEBusinessScenario","test_course_scenario","",""
-"","23","9.请求参数为空","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
-"","35","15.时间范围格式错误","testcase.Single.UserManagement","Sun Jun 15 15:03:26 CST 2025","passed","Sun Jun 15 15:03:26 CST 2025","TestUserManager","test_user_find","",""
+"","90","登录成功","testcase.Single.UserManagement","Wed Jun 25 08:20:25 CST 2025","passed","Wed Jun 25 08:20:25 CST 2025","TestUserManager","test_user_login","",""
+"","124","3修改课程","testcase.Business Scenario","Wed Jun 25 08:20:36 CST 2025","passed","Wed Jun 25 08:20:36 CST 2025","TestEBusinessScenario","test_course_scenario","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","21","修改课程价格验证","testcase.Single.CourseManagement","Wed Jun 25 08:20:45 CST 2025","passed","Wed Jun 25 08:20:45 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试新增课程接口
+        ","128","1.新增课程成功","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"","38","14.搜索不存在的用户","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"","232","4.查询用户组合权限-权限管理员+普通用户","testcase.Business Scenario","Wed Jun 25 08:20:30 CST 2025","passed","Wed Jun 25 08:20:30 CST 2025","TestUserManager","test_user_permissions","",""
+"","5","4.缺少必填参数currentPage","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","30","修改课程使用无效ID","testcase.Single.CourseManagement","Wed Jun 25 08:20:45 CST 2025","passed","Wed Jun 25 08:20:45 CST 2025","TestCourseSave","test_course_save","",""
+"","255","1.正常查询第一页用户列表","testcase.Single.UserManagement","Wed Jun 25 08:20:26 CST 2025","passed","Wed Jun 25 08:20:26 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试新增课程接口
+        ","14","新增课程长课程名称50字符","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试新增课程接口
+        ","31","新增课程长课程名称51字符","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","33","修改不存在的课程","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"","116","密码为空","testcase.Single.UserManagement","Wed Jun 25 08:20:26 CST 2025","passed","Wed Jun 25 08:20:26 CST 2025","TestUserManager","test_user_login","",""
+"
+        测试新增课程接口
+        ","20","新增课程错误的Content-Type头","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试新增课程接口
+        ","18","新增课程缺少必填字段previewFirstField","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"","86","3.正常搜索-组合条件","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","133","修改课程基本信息","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","41","修改课程缺少必填字段previewFirstField","testcase.Single.CourseManagement","Wed Jun 25 08:20:45 CST 2025","passed","Wed Jun 25 08:20:45 CST 2025","TestCourseSave","test_course_save","",""
+"","16","8.缺少必填参数pageSize","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","29","修改课程错误的Authorization头","testcase.Single.CourseManagement","Wed Jun 25 08:20:45 CST 2025","passed","Wed Jun 25 08:20:45 CST 2025","TestCourseSave","test_course_save","",""
+"","16","9.请求参数为空","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"","106","4更新课程状态（上架/下架）","testcase.Business Scenario","Wed Jun 25 08:20:36 CST 2025","passed","Wed Jun 25 08:20:36 CST 2025","TestEBusinessScenario","test_course_scenario","",""
+"","106","获取登录态-课程管理员","testcase.Business Scenario","Wed Jun 25 08:20:29 CST 2025","passed","Wed Jun 25 08:20:29 CST 2025","TestUserManager","test_user_permissions","",""
+"","95","2.查询第二页用户列表","testcase.Single.UserManagement","Wed Jun 25 08:20:26 CST 2025","passed","Wed Jun 25 08:20:26 CST 2025","TestUserManager","test_user_find","",""
+"","156","5.查询用户权限-无权限用户","testcase.Business Scenario","Wed Jun 25 08:20:30 CST 2025","broken","Wed Jun 25 08:20:30 CST 2025","TestUserManager","test_user_permissions","",""
+"","141","1查询所有课程","testcase.Business Scenario","Wed Jun 25 08:20:36 CST 2025","passed","Wed Jun 25 08:20:36 CST 2025","TestEBusinessScenario","test_course_scenario","",""
+"","108","非手机号码","testcase.Single.UserManagement","Wed Jun 25 08:20:26 CST 2025","passed","Wed Jun 25 08:20:26 CST 2025","TestUserManager","test_user_login","",""
+"","14","10.参数类型错误","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"","277","2新增课程","testcase.Business Scenario","Wed Jun 25 08:20:36 CST 2025","passed","Wed Jun 25 08:20:36 CST 2025","TestEBusinessScenario","test_course_scenario","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","35","修改课程使用空ID","testcase.Single.CourseManagement","Wed Jun 25 08:20:45 CST 2025","passed","Wed Jun 25 08:20:45 CST 2025","TestCourseSave","test_course_save","",""
+"","118","5.分页查询-第二页","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","failed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","23","6.请求参数为空","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","91","1.正常搜索-按用户名","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","97","手机号码位数不足","testcase.Single.UserManagement","Wed Jun 25 08:20:26 CST 2025","passed","Wed Jun 25 08:20:26 CST 2025","TestUserManager","test_user_login","",""
+"","22","7.缺少必填参数currentPage","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"","236","2.查询用户权限-课程管理员","testcase.Business Scenario","Wed Jun 25 08:20:29 CST 2025","passed","Wed Jun 25 08:20:29 CST 2025","TestUserManager","test_user_permissions","",""
+"","106","手机号码为空","testcase.Single.UserManagement","Wed Jun 25 08:20:26 CST 2025","passed","Wed Jun 25 08:20:26 CST 2025","TestUserManager","test_user_login","",""
+"
+        测试新增课程接口
+        ","17","新增课程无效价格","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","21","修改课程缺少必填字段brief","testcase.Single.CourseManagement","Wed Jun 25 08:20:45 CST 2025","passed","Wed Jun 25 08:20:45 CST 2025","TestCourseSave","test_course_save","",""
+"","114","2.正常搜索-按时间范围","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","16","10.页码超出范围","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","91","9.测试过期的Cookie","testcase.Business Scenario","Wed Jun 25 08:20:31 CST 2025","passed","Wed Jun 25 08:20:31 CST 2025","TestUserManager","test_user_permissions","",""
+"","100","6.测试缺少Authorization头","testcase.Business Scenario","Wed Jun 25 08:20:30 CST 2025","broken","Wed Jun 25 08:20:30 CST 2025","TestUserManager","test_user_permissions","",""
+"
+        测试新增课程接口
+        ","17","新增课程空请求体","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"","102","7.测试过期的Authorization","testcase.Business Scenario","Wed Jun 25 08:20:30 CST 2025","passed","Wed Jun 25 08:20:31 CST 2025","TestUserManager","test_user_permissions","",""
+"","36","16.验证分页信息完整性","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试根据课程ID查询课程接口
+        验证通过课程ID获取特定课程信息的功能，包括有效ID、无效ID和权限验证
+        ","93","无效的courseId参数类型","testcase.Single.CourseManagement","Wed Jun 25 08:20:39 CST 2025","broken","Wed Jun 25 08:20:39 CST 2025","TestCourseFindById","test_course_findbyid","",""
+"","19","8.页码小于1","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试根据课程ID查询课程接口
+        验证通过课程ID获取特定课程信息的功能，包括有效ID、无效ID和权限验证
+        ","111","3.缺少courseId参数","testcase.Single.CourseManagement","Wed Jun 25 08:20:38 CST 2025","broken","Wed Jun 25 08:20:39 CST 2025","TestCourseFindById","test_course_findbyid","",""
+"
+        测试根据课程ID查询课程接口
+        验证通过课程ID获取特定课程信息的功能，包括有效ID、无效ID和权限验证
+        ","91","1.根据有效课程ID查询成功","testcase.Single.CourseManagement","Wed Jun 25 08:20:38 CST 2025","passed","Wed Jun 25 08:20:38 CST 2025","TestCourseFindById","test_course_findbyid","",""
+"","33","13.页码超出范围","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"","82","密码错误","testcase.Single.UserManagement","Wed Jun 25 08:20:25 CST 2025","passed","Wed Jun 25 08:20:26 CST 2025","TestUserManager","test_user_login","",""
+"","0","5.缺少必填参数pageSize","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","28","12.每页条数小于0","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"","104","获取登录态-权限管理员+普通用户","testcase.Business Scenario","Wed Jun 25 08:20:30 CST 2025","passed","Wed Jun 25 08:20:30 CST 2025","TestUserManager","test_user_permissions","",""
+"","100","获取登录态-无权限用户","testcase.Business Scenario","Wed Jun 25 08:20:30 CST 2025","passed","Wed Jun 25 08:20:30 CST 2025","TestUserManager","test_user_permissions","",""
+"","100","6.分页查询-每页5条","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"","101","获取登录态-普通用户","testcase.Business Scenario","Wed Jun 25 08:20:29 CST 2025","passed","Wed Jun 25 08:20:29 CST 2025","TestUserManager","test_user_permissions","",""
+"","120","3.每页显示5条数据","testcase.Single.UserManagement","Wed Jun 25 08:20:26 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","94","获取登录态-超级管理员","testcase.Business Scenario","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_permissions","",""
+"
+        测试查询所有课程接口
+        验证课程列表的获取功能，包括正常查询和权限验证
+        ","158","查询所有课程成功","testcase.Single.CourseManagement","Wed Jun 25 08:20:38 CST 2025","passed","Wed Jun 25 08:20:38 CST 2025","TestCourseManagement","test_course_findall","",""
+"","148","8.测试缺少Cookie","testcase.Business Scenario","Wed Jun 25 08:20:31 CST 2025","passed","Wed Jun 25 08:20:31 CST 2025","TestUserManager","test_user_permissions","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","17","修改课程缺少必填字段courseName","testcase.Single.CourseManagement","Wed Jun 25 08:20:45 CST 2025","passed","Wed Jun 25 08:20:45 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试修改课程接口
+        注意：此测试依赖新增课程测试提取的course_id
+        ","118","修改课程成功","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"","17","9.每页条数小于1","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","25","15.时间范围格式错误","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试新增课程接口
+        ","32","新增课程缺少必填字段brief","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"","735","1.查询用户权限-超级管理员","testcase.Business Scenario","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:29 CST 2025","TestUserManager","test_user_permissions","",""
+"","10","11.页码小于1","testcase.Single.UserManagement","Wed Jun 25 08:20:28 CST 2025","passed","Wed Jun 25 08:20:28 CST 2025","TestUserManager","test_user_find","",""
+"
+        测试新增课程接口
+        ","48","新增课程缺少必填字段courseName","testcase.Single.CourseManagement","Wed Jun 25 08:20:44 CST 2025","passed","Wed Jun 25 08:20:44 CST 2025","TestCourseSave","test_course_save","",""
+"
+        测试根据课程ID查询课程接口
+        验证通过课程ID获取特定课程信息的功能，包括有效ID、无效ID和权限验证
+        ","131","2.查询不存在的课程ID","testcase.Single.CourseManagement","Wed Jun 25 08:20:38 CST 2025","passed","Wed Jun 25 08:20:38 CST 2025","TestCourseFindById","test_course_findbyid","",""
+"","15","7.参数类型错误","testcase.Single.UserManagement","Wed Jun 25 08:20:27 CST 2025","passed","Wed Jun 25 08:20:27 CST 2025","TestUserManager","test_user_find","",""
+"","213","3.查询用户权限-普通用户","testcase.Business Scenario","Wed Jun 25 08:20:29 CST 2025","passed","Wed Jun 25 08:20:30 CST 2025","TestUserManager","test_user_permissions","",""

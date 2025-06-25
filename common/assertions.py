@@ -75,7 +75,6 @@ class Assertions:
         flag = 0
 
         # 处理 status_code
-
         for json_path, expected_value in expected_results.items():
             if json_path == "status_code":
                 flag += self.status_code_eq_assert(expected_value, status_code)
@@ -181,32 +180,32 @@ class Assertions:
             logs.error('接口响应时间[%ss]大于预期时间[%ss]' % (res_time, exp_time))
             raise
 
-    def equal_mysql_assert(self, expected_results):
+    def equal_mysql_assert(self, value):
         """
         数据库相等断言，兼容SQL在键或值中的不同情况
-        :param expected_results: 预期结果，可能是{SQL: 预期值}或{预期值: SQL}
+        :param value: 预期结果，可能是{SQL: 预期值}或{预期值: SQL}
         :return: 返回flag标识，0表示正常，非0表示测试不通过
         """
         flag = 0
         sql = None
-        expected_value = None
+        assert_value = None
 
         try:
             # 识别SQL位置（优先识别值中的SQL）
-            k, v = list(expected_results.items())[0]
+            k, v = list(value.items())[0]
 
             if isinstance(v, str) and v.strip().upper().startswith("SELECT"):
-                # 情况1: {预期值: SQL}
+                # 情况1: {实际值: SQL}
                 sql = v
-                expected_value = k
+                assert_value = k
             elif isinstance(k, str) and k.strip().upper().startswith("SELECT"):
                 # 情况2: {SQL: 预期值}
                 sql = k
-                expected_value = v
+                assert_value = v
             else:
                 flag += 1
                 logs.error("数据库断言失败：未识别到有效的SQL语句")
-                allure.attach(f"输入数据: {expected_results}", 'SQL识别失败',
+                allure.attach(f"输入数据: {value}", 'SQL识别失败',
                               attachment_type=allure.attachment_type.TEXT)
                 return flag
 
@@ -217,7 +216,7 @@ class Assertions:
             if db_value is None:
                 flag += 1
                 logs.error("数据库断言失败：查询结果为空")
-                allure.attach(f"SQL: {sql}\n预期值: {expected_value}\n实际值: None",
+                allure.attach(f"SQL: {sql}\n预期值: {assert_value}\n实际值: None",
                               '数据库断言结果',
                               attachment_type=allure.attachment_type.TEXT)
                 return flag
@@ -228,14 +227,14 @@ class Assertions:
                 if len(row) >= 1:  # 确保至少有一列数据
                     actual_values.append(str(row[0]))
 
-            # 处理预期值（兼容字符串和列表）
-            if isinstance(expected_value, str):
+            # 处理非sql的值（兼容字符串和列表）
+            if isinstance(assert_value, str):
                 # 移除可能的空格并分割
-                expected_values = [x.strip() for x in expected_value.split(',')]
-            elif isinstance(expected_value, list):
-                expected_values = [str(x) for x in expected_value]
+                expected_values = [x.strip() for x in assert_value.split(',')]
+            elif isinstance(assert_value, list):
+                expected_values = [str(x) for x in assert_value]
             else:
-                expected_values = [str(expected_value)]
+                expected_values = [str(assert_value)]
 
             # 比较实际值和预期值
             if actual_values == expected_values:
@@ -269,7 +268,7 @@ class Assertions:
         else:
             allure.attach(f"预期结果：{assert_value}\n实际结果：{status_code}", '响应代码断言结果:成功',
                           attachment_type=allure.attachment_type.TEXT)
-            logs.error("接口返回码包含断言成功：预期结果【%s】,实际结果【%s】" % (status_code, assert_value))
+            logs.info("接口返回码包含断言成功：预期结果【%s】,实际结果【%s】" % (status_code, assert_value))
         return flag
 
     def status_code_neq_assert(self, assert_value, status_code):
@@ -277,13 +276,13 @@ class Assertions:
         if assert_value != status_code:
             allure.attach(f"预期结果：{assert_value}\n实际结果：{status_code}", '响应代码断言结果:成功',
                           attachment_type=allure.attachment_type.TEXT)
-            logs.error("接口返回码包含断言成功：预期结果【%s】,实际结果【%s】" % (status_code, assert_value))
+            logs.info("接口返回码包含断言成功：预期结果【%s】,实际结果【%s】" % (status_code, assert_value))
 
         else:
             flag += 1
             allure.attach(f"预期结果：{assert_value}\n实际结果：{status_code}", '响应代码断言结果:失败',
                           attachment_type=allure.attachment_type.TEXT)
-            logs.error("接口返回码包含断言失败：接口返回码【%s】不等于【%s】" % (status_code, assert_value))
+            logs.error("接口返回码包含断言失败：接口返回码【%s】等于【%s】" % (status_code, assert_value))
         return flag
     def assert_result(self, expected, response, status_code):
         """
@@ -306,11 +305,8 @@ class Assertions:
                     elif key == "eq":
                         flag = self.equal_assert(value, response, status_code)
                         all_flag = all_flag + flag
-                    elif key == 'ne':
+                    elif key == 'neq':
                         flag = self.not_equal_assert(value, response, status_code)
-                        all_flag = all_flag + flag
-                    elif key == 'rv':
-                        flag = self.assert_response_any(actual_results=response, expected_results=value)
                         all_flag = all_flag + flag
                     elif key == 'eq_db':
                         flag = self.equal_mysql_assert(value)

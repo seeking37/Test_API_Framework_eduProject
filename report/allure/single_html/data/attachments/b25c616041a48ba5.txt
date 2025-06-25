@@ -1,4 +1,0 @@
-{
-    "message": "参数类型错误，currentPage和pageSize必须为整数",
-    "success": false
-}
